@@ -39,11 +39,13 @@ class ViewController: UIViewController {
         case self.unoButton:
             if(unoButton.titleLabel?.text != nil && dosButton.currentTitle == nil){
                 //set values
-                unoButton.setTitle(nil,for: .normal);
                 tempButton = unoButton;
+                var color = unoButton.backgroundColor;
+                unoButton.setTitle(nil,for: .normal);
                 dosButton.setTitle(tempButton.titleLabel!.text!,for: .normal);
                 //set colors
-                unoButton.backgroundColor = tempButton.backgroundColor;
+                unoButton.backgroundColor = dosButton.backgroundColor;
+                dosButton.backgroundColor = color;
             }
             else if(unoButton.titleLabel?.text != nil && cincoButton.currentTitle == nil){
                 unoButton.setTitle(nil,for: .normal);
@@ -56,6 +58,32 @@ class ViewController: UIViewController {
                 dosButton.setTitle(nil, for: .normal);
                 tempButton = dosButton;
                 unoButton.setTitle(tempButton.titleLabel!.text!,for: .normal);
+            }
+            else if(dosButton.titleLabel?.text != nil && seisButton.currentTitle == nil){
+                dosButton.setTitle(nil, for: .normal);
+                tempButton = dosButton;
+                seisButton.setTitle(tempButton.titleLabel!.text!, for: .normal);
+            }
+            else if(dosButton.titleLabel?.text != nil && tresButton.currentTitle == nil){
+                dosButton.setTitle(nil, for: .normal);
+                tempButton = dosButton;
+                tresButton.setTitle(tempButton.titleLabel!.text!, for: .normal);
+            }
+        case self.tresButton:
+            if(tresButton.titleLabel?.text != nil && dosButton.currentTitle == nil){
+                tresButton.setTitle(nil, for: .normal);
+                tempButton = tresButton;
+                dosButton.setTitle(tempButton.titleLabel!.text!, for: .normal);
+            }
+            else if(tresButton.titleLabel?.text != nil && cuatroButton.currentTitle == nil){
+                tresButton.setTitle(nil, for: .normal);
+                tempButton = tresButton;
+                cuatroButton.setTitle(tempButton.titleLabel!.text!, for: .normal);
+            }
+            else if(tresButton.titleLabel?.text != nil && cuatroButton.currentTitle == nil){
+                tresButton.setTitle(nil, for: .normal);
+                tempButton = tresButton;
+                cuatroButton.setTitle(tempButton.titleLabel!.text!, for: .normal);
             }
         default:
             break;
