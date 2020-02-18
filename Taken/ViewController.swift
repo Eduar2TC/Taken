@@ -34,13 +34,14 @@ class ViewController: UIViewController {
     @IBAction func moverCasilla(_ sender: UIButton) {
         //variable temp
         var tempButton: UIButton;
+        var color = sender.backgroundColor; // temp variable color
+        
         switch sender{
-            
+
         case self.unoButton:
             if(unoButton.titleLabel?.text != nil && dosButton.currentTitle == nil){
                 //set values
                 tempButton = unoButton;
-                var color = unoButton.backgroundColor;
                 unoButton.setTitle(nil,for: .normal);
                 dosButton.setTitle(tempButton.titleLabel!.text!,for: .normal);
                 //set colors
@@ -48,42 +49,55 @@ class ViewController: UIViewController {
                 dosButton.backgroundColor = color;
             }
             else if(unoButton.titleLabel?.text != nil && cincoButton.currentTitle == nil){
-                unoButton.setTitle(nil,for: .normal);
                 tempButton = unoButton;
+                unoButton.setTitle(nil,for: .normal);
                 cincoButton.setTitle(tempButton.titleLabel!.text!,for: .normal);
-                cincoButton.backgroundColor = tempButton.backgroundColor;
+                unoButton.backgroundColor = cincoButton.backgroundColor;
+                cincoButton.backgroundColor = color;
+                
             }
         case self.dosButton:
             if(dosButton.titleLabel?.text != nil && unoButton.currentTitle == nil){
-                dosButton.setTitle(nil, for: .normal);
                 tempButton = dosButton;
+                dosButton.setTitle(nil, for: .normal);
                 unoButton.setTitle(tempButton.titleLabel!.text!,for: .normal);
+                dosButton.backgroundColor = unoButton.backgroundColor;
+                unoButton.backgroundColor = color;
             }
             else if(dosButton.titleLabel?.text != nil && seisButton.currentTitle == nil){
-                dosButton.setTitle(nil, for: .normal);
                 tempButton = dosButton;
+                dosButton.setTitle(nil, for: .normal);
                 seisButton.setTitle(tempButton.titleLabel!.text!, for: .normal);
+                dosButton.backgroundColor = seisButton.backgroundColor;
+                seisButton.backgroundColor = color;
             }
             else if(dosButton.titleLabel?.text != nil && tresButton.currentTitle == nil){
-                dosButton.setTitle(nil, for: .normal);
                 tempButton = dosButton;
+                dosButton.setTitle(nil, for: .normal);
                 tresButton.setTitle(tempButton.titleLabel!.text!, for: .normal);
+                dosButton.backgroundColor = tresButton.backgroundColor;
+                tresButton.backgroundColor = color;
             }
         case self.tresButton:
             if(tresButton.titleLabel?.text != nil && dosButton.currentTitle == nil){
-                tresButton.setTitle(nil, for: .normal);
                 tempButton = tresButton;
+                tresButton.setTitle(nil, for: .normal);
                 dosButton.setTitle(tempButton.titleLabel!.text!, for: .normal);
+                tresButton.backgroundColor = dosButton.backgroundColor;
+                dosButton.backgroundColor = color;
             }
             else if(tresButton.titleLabel?.text != nil && cuatroButton.currentTitle == nil){
-                tresButton.setTitle(nil, for: .normal);
                 tempButton = tresButton;
+                tresButton.setTitle(nil, for: .normal);
                 cuatroButton.setTitle(tempButton.titleLabel!.text!, for: .normal);
+                tresButton.backgroundColor = cuatroButton.backgroundColor;
+                cuatroButton.backgroundColor = color;
             }
-            else if(tresButton.titleLabel?.text != nil && cuatroButton.currentTitle == nil){
+            else if(tresButton.titleLabel?.text != nil && sieteButton.currentTitle == nil){
                 tresButton.setTitle(nil, for: .normal);
                 tempButton = tresButton;
-                cuatroButton.setTitle(tempButton.titleLabel!.text!, for: .normal);
+                sieteButton.setTitle(tempButton.titleLabel!.text!, for: .normal);
+                sieteButton.backgroundColor = tempButton.backgroundColor;
             }
         default:
             break;
