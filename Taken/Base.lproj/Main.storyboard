@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -70,7 +70,7 @@
                                 <rect key="frame" x="294" y="223" width="70" height="70"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal">
+                                <state key="normal" title="4">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -79,6 +79,9 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="moverCasilla:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iNa-Hm-iom"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xOg-Io-2DL">
                                 <rect key="frame" x="60" y="301" width="70" height="70"/>
@@ -93,6 +96,9 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="moverCasilla:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CFU-WZ-42w"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1P9-nD-nA7">
                                 <rect key="frame" x="138" y="301" width="70" height="70"/>
@@ -107,6 +113,9 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="moverCasilla:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nWT-gl-6hc"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rgH-33-Bc3">
                                 <rect key="frame" x="216" y="301" width="70" height="70"/>
@@ -121,6 +130,9 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="moverCasilla:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P73-zo-Lv4"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qha-BC-XlY">
                                 <rect key="frame" x="294" y="301" width="70" height="70"/>
@@ -135,6 +147,9 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="moverCasilla:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8vC-mn-rWL"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6y9-Fe-DMn">
                                 <rect key="frame" x="138" y="379" width="70" height="70"/>
@@ -149,6 +164,9 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="moverCasilla:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Spg-d9-cHY"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jm3-KI-L2S">
                                 <rect key="frame" x="60" y="379" width="70" height="70"/>
@@ -163,6 +181,9 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="moverCasilla:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2GX-cy-UBy"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FnZ-Od-8O0">
                                 <rect key="frame" x="294" y="379" width="70" height="70"/>
@@ -177,6 +198,9 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="moverCasilla:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BVh-Nm-Hs7"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GPb-9N-YSV">
                                 <rect key="frame" x="138" y="457" width="70" height="70"/>
@@ -191,6 +215,9 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="moverCasilla:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GUJ-VX-NN9"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wib-wc-hm6">
                                 <rect key="frame" x="216" y="457" width="70" height="70"/>
@@ -205,6 +232,9 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="moverCasilla:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7AE-M2-A35"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0tE-tD-MIJ">
                                 <rect key="frame" x="60" y="457" width="70" height="70"/>
@@ -219,6 +249,9 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="moverCasilla:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kxf-Yj-pwe"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Movimientos" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jvk-0Q-9WO">
                                 <rect key="frame" x="20" y="633" width="374" height="24"/>
@@ -252,6 +285,9 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="moverCasilla:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6LP-tf-URh"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mjH-dT-pRG">
                                 <rect key="frame" x="90" y="673" width="235" height="43"/>
@@ -283,6 +319,25 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="moverCasilla:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XAy-KQ-5LZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xua-vS-LQd">
+                                <rect key="frame" x="178" y="760" width="59" height="30"/>
+                                <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Reiniciar">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="reiniciarTablero:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XRK-hH-eSY"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.94035643339157104" green="0.92224889993667603" blue="0.73088198900222778" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -304,6 +359,7 @@
                             <constraint firstItem="uhf-Vs-w1R" firstAttribute="leading" secondItem="6y9-Fe-DMn" secondAttribute="trailing" constant="3" id="C1p-tR-L3r"/>
                             <constraint firstItem="1uz-Rb-v84" firstAttribute="top" secondItem="FnZ-Od-8O0" secondAttribute="bottom" constant="3" id="G93-P4-4Sh"/>
                             <constraint firstItem="Wib-wc-hm6" firstAttribute="top" secondItem="uhf-Vs-w1R" secondAttribute="bottom" constant="3" id="Jbo-ZH-COy"/>
+                            <constraint firstItem="xua-vS-LQd" firstAttribute="top" secondItem="mjH-dT-pRG" secondAttribute="bottom" constant="20" id="Jlz-hE-slJ"/>
                             <constraint firstItem="uhf-Vs-w1R" firstAttribute="height" secondItem="Wib-wc-hm6" secondAttribute="height" multiplier="1.03922" id="JzN-pd-Tj2"/>
                             <constraint firstItem="uhf-Vs-w1R" firstAttribute="top" secondItem="rgH-33-Bc3" secondAttribute="bottom" constant="3" id="Kkp-7W-HjD"/>
                             <constraint firstItem="FPV-HY-dNy" firstAttribute="width" secondItem="X3y-CH-HaK" secondAttribute="width" id="Kuf-gR-Y3o"/>
@@ -312,8 +368,10 @@
                             <constraint firstItem="Wib-wc-hm6" firstAttribute="leading" secondItem="GPb-9N-YSV" secondAttribute="trailing" constant="3" id="NrA-Zb-iks"/>
                             <constraint firstItem="GPb-9N-YSV" firstAttribute="top" secondItem="6y9-Fe-DMn" secondAttribute="bottom" constant="3" id="OJt-EA-BVY"/>
                             <constraint firstItem="uhx-Mn-Pa0" firstAttribute="top" secondItem="fXB-Fm-eex" secondAttribute="bottom" constant="60" id="Q3a-Ob-fmP"/>
+                            <constraint firstItem="xua-vS-LQd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="178" id="QgB-0p-0Jt"/>
                             <constraint firstItem="mjH-dT-pRG" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Rb6-MY-OkN"/>
                             <constraint firstItem="xOg-Io-2DL" firstAttribute="height" secondItem="jm3-KI-L2S" secondAttribute="height" id="TC7-jt-sYB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xua-vS-LQd" secondAttribute="trailing" constant="177" id="TE9-Gm-xXa"/>
                             <constraint firstItem="1uz-Rb-v84" firstAttribute="leading" secondItem="Wib-wc-hm6" secondAttribute="trailing" constant="3" id="TzI-sa-PJF"/>
                             <constraint firstItem="xOg-Io-2DL" firstAttribute="top" secondItem="uhx-Mn-Pa0" secondAttribute="bottom" constant="3" id="UEH-fy-jv9"/>
                             <constraint firstItem="1P9-nD-nA7" firstAttribute="top" secondItem="FPV-HY-dNy" secondAttribute="bottom" constant="3" id="UnV-8L-aBc"/>
