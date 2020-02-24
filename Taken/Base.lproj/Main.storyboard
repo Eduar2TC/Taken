@@ -36,7 +36,7 @@
                                 <rect key="frame" x="138" y="223" width="70" height="70"/>
                                 <color key="backgroundColor" red="0.31661921352209349" green="0.7141802074181347" blue="0.55692801635658284" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="2">
+                                <state key="normal" title="5">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -53,7 +53,7 @@
                                 <rect key="frame" x="216" y="223" width="70" height="70"/>
                                 <color key="backgroundColor" red="1" green="0.98478173503581967" blue="0.7308334708822839" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="20"/>
-                                <state key="normal" title="3">
+                                <state key="normal" title="9">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -70,7 +70,7 @@
                                 <rect key="frame" x="294" y="223" width="70" height="70"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="4">
+                                <state key="normal" title="13">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -87,7 +87,7 @@
                                 <rect key="frame" x="60" y="301" width="70" height="70"/>
                                 <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="5">
+                                <state key="normal" title="2">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -121,7 +121,7 @@
                                 <rect key="frame" x="216" y="301" width="70" height="70"/>
                                 <color key="backgroundColor" red="1" green="0.98478173503581967" blue="0.7308334708822839" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="7">
+                                <state key="normal" title="10">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -138,7 +138,7 @@
                                 <rect key="frame" x="294" y="301" width="70" height="70"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="8">
+                                <state key="normal" title="14">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -155,7 +155,7 @@
                                 <rect key="frame" x="138" y="379" width="70" height="70"/>
                                 <color key="backgroundColor" red="0.31661921352209349" green="0.7141802074181347" blue="0.55692801635658284" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="10">
+                                <state key="normal" title="7">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -172,7 +172,7 @@
                                 <rect key="frame" x="60" y="379" width="70" height="70"/>
                                 <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="9">
+                                <state key="normal" title="3">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -189,7 +189,7 @@
                                 <rect key="frame" x="294" y="379" width="70" height="70"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="12">
+                                <state key="normal">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -206,7 +206,7 @@
                                 <rect key="frame" x="138" y="457" width="70" height="70"/>
                                 <color key="backgroundColor" red="0.31661921352209349" green="0.7141802074181347" blue="0.55692801635658284" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="14">
+                                <state key="normal" title="8">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -223,7 +223,7 @@
                                 <rect key="frame" x="216" y="457" width="70" height="70"/>
                                 <color key="backgroundColor" red="1" green="0.98478173503581967" blue="0.7308334708822839" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="15">
+                                <state key="normal" title="12">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -240,7 +240,7 @@
                                 <rect key="frame" x="60" y="457" width="70" height="70"/>
                                 <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="13">
+                                <state key="normal" title="4">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -310,7 +310,7 @@
                                 <rect key="frame" x="294" y="457" width="70" height="70"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal">
+                                <state key="normal" title="15">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -431,10 +431,12 @@
                         <outlet property="diezButton" destination="6y9-Fe-DMn" id="i2g-F4-EPh"/>
                         <outlet property="doceButton" destination="FnZ-Od-8O0" id="kmQ-Ma-9JR"/>
                         <outlet property="dosButton" destination="FPV-HY-dNy" id="uNj-Xc-2yB"/>
+                        <outlet property="labelMovimientos" destination="mjH-dT-pRG" id="yYh-AF-E4w"/>
                         <outlet property="nueveButton" destination="jm3-KI-L2S" id="du0-UE-7AD"/>
                         <outlet property="ochoButton" destination="qha-BC-XlY" id="z7P-eZ-gWp"/>
                         <outlet property="onceButton" destination="uhf-Vs-w1R" id="XPb-IE-GUo"/>
                         <outlet property="quinceButton" destination="Wib-wc-hm6" id="Cuj-VC-Mod"/>
+                        <outlet property="reiniciarButton" destination="xua-vS-LQd" id="PB4-m6-8aC"/>
                         <outlet property="seisButton" destination="1P9-nD-nA7" id="vEf-gN-ZBh"/>
                         <outlet property="sieteButton" destination="rgH-33-Bc3" id="pa5-5H-Dpj"/>
                         <outlet property="treceButton" destination="0tE-tD-MIJ" id="hLz-cY-6qN"/>
