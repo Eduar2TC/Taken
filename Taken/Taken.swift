@@ -45,7 +45,6 @@ class Taken{
             //print("indice = \(z)")
             for x in 0..<self.tablerosMeta[z].count{
                 for y in 0..<self.tablerosMeta[z][x].count{
-                    print(self.tablero[x][y])
                     if(self.tablerosMeta[z][x][y] == self.tablero[x][y]){ // compare element by element
                         countCoincidences+=1;
                     }
@@ -59,7 +58,7 @@ class Taken{
             }else{
                 print("Tablero no son iguales: -Coincidencias \(countCoincidences)");
                 countCoincidences = 0;
-                return (false, 0); //retorna falso ningun tablero del arreglo es igual al actual
+                //return (false, 0); //retorna falso ningun tablero del arreglo es igual al actual
             }
         }
         return (false, 0); // Por default retorna falso //retorna falso ningun tablero del arreglo es igual al actual

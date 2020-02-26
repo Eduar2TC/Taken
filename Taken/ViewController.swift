@@ -181,6 +181,36 @@ class ViewController: UIViewController {
 
         self.present(alert, animated: true)
     }
+    func compararArregloActual(){
+        var tableroActual = [
+                        [unoButton.titleLabel!.text!, dosButton.titleLabel!.text!, tresButton.titleLabel!.text!, cuatroButton.titleLabel!.text!],
+                           [cincoButton.titleLabel!.text!, seisButton.titleLabel!.text!, sieteButton.titleLabel!.text!, ochoButton.titleLabel!.text!],
+                            [nueveButton.titleLabel!.text!, diezButton.titleLabel!.text!, onceButton.titleLabel!.text!, doceButton.titleLabel!.text!],
+                            [treceButton.titleLabel!.text!, catorceButton.titleLabel!.text!, quinceButton.titleLabel!.text!,
+                             diesciseisButton.titleLabel!.text!]];
+        self.takenObject?.setTableroActual(tablero: tableroActual);
+        var resultsComparation = self.takenObject?.verificarTablero();
+        if(resultsComparation?.0 == true && resultsComparation?.1 == 0){
+            print("result 1");
+            self.desactivaTablero();
+            self.alerta(resultado: "Vertical");
+        }
+        else if(resultsComparation?.0 == true && resultsComparation?.1 == 1){
+            print("result 2");
+            self.desactivaTablero();
+            self.alerta(resultado: "Periferico");
+        }
+        else if(resultsComparation?.0 == true && resultsComparation?.1 == 2){
+            print("result 3");
+            self.desactivaTablero();
+            self.alerta(resultado: "Espiral");
+        }
+        else if(resultsComparation?.0 == true && resultsComparation?.1 == 3){
+            print("result 4");
+            self.desactivaTablero();
+            self.alerta(resultado: "Imposible");
+        }
+    }
     @IBAction func moverCasilla(_ sender: UIButton) {
         //variable temp
         var tempButton: UIButton;
@@ -202,35 +232,8 @@ class ViewController: UIViewController {
                 //show movimientos on labelUI
                 self.setLabelMovimientos(movimientos: "\(movimientos)");
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
-                //compare final states
-                var tableroActual = [
-                                [unoButton.titleLabel!.text!, dosButton.titleLabel!.text!, tresButton.titleLabel!.text!, cuatroButton.titleLabel!.text!],
-                                   [cincoButton.titleLabel!.text!, seisButton.titleLabel!.text!, sieteButton.titleLabel!.text!, ochoButton.titleLabel!.text!],
-                                    [nueveButton.titleLabel!.text!, diezButton.titleLabel!.text!, onceButton.titleLabel!.text!, doceButton.titleLabel!.text!],
-                                    [treceButton.titleLabel!.text!, catorceButton.titleLabel!.text!, quinceButton.titleLabel!.text!,
-                                     diesciseisButton.titleLabel!.text!]];
-                self.takenObject?.setTableroActual(tablero: tableroActual);
-                var resultsComparation = self.takenObject?.verificarTablero();
-                if(resultsComparation?.0 == true && resultsComparation?.1 == 0){
-                    print("result 1");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Vertical");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 1){
-                    print("result 2");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Periferico");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 2){
-                    print("result 3");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Espiral");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 3){
-                    print("result 4");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Imposible");
-                }
+                //compare actual state with array of final states
+                self.compararArregloActual();
             }
             else if(unoButton.titleLabel?.text != nil && cincoButton.currentTitle == nil){
                 tempButton = unoButton;
@@ -244,35 +247,8 @@ class ViewController: UIViewController {
                 //show movimientos on labelUI
                 self.setLabelMovimientos(movimientos: "\(movimientos)");
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
-                //compare final states
-                var tableroActual = [
-                                [unoButton.titleLabel!.text!, dosButton.titleLabel!.text!, tresButton.titleLabel!.text!, cuatroButton.titleLabel!.text!],
-                                   [cincoButton.titleLabel!.text!, seisButton.titleLabel!.text!, sieteButton.titleLabel!.text!, ochoButton.titleLabel!.text!],
-                                    [nueveButton.titleLabel!.text!, diezButton.titleLabel!.text!, onceButton.titleLabel!.text!, doceButton.titleLabel!.text!],
-                                    [treceButton.titleLabel!.text!, catorceButton.titleLabel!.text!, quinceButton.titleLabel!.text!,
-                                     diesciseisButton.titleLabel!.text!]];
-                self.takenObject?.setTableroActual(tablero: tableroActual);
-                var resultsComparation = self.takenObject?.verificarTablero();
-                if(resultsComparation?.0 == true && resultsComparation?.1 == 0){
-                    print("result 1");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Vertical");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 1){
-                    print("result 2");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Periferico");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 2){
-                    print("result 3");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Espiral");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 3){
-                    print("result 4");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Imposible");
-                }
+                //compare actual state with array of final states
+                self.compararArregloActual();
                 
             }
         case self.dosButton:
@@ -288,35 +264,8 @@ class ViewController: UIViewController {
                 //show movimientos on labelUI
                 self.setLabelMovimientos(movimientos: "\(movimientos)");
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
-                //compare final states
-                var tableroActual = [
-                                [unoButton.titleLabel!.text!, dosButton.titleLabel!.text!, tresButton.titleLabel!.text!, cuatroButton.titleLabel!.text!],
-                                   [cincoButton.titleLabel!.text!, seisButton.titleLabel!.text!, sieteButton.titleLabel!.text!, ochoButton.titleLabel!.text!],
-                                    [nueveButton.titleLabel!.text!, diezButton.titleLabel!.text!, onceButton.titleLabel!.text!, doceButton.titleLabel!.text!],
-                                    [treceButton.titleLabel!.text!, catorceButton.titleLabel!.text!, quinceButton.titleLabel!.text!,
-                                     diesciseisButton.titleLabel!.text!]];
-                self.takenObject?.setTableroActual(tablero: tableroActual);
-                var resultsComparation = self.takenObject?.verificarTablero();
-                if(resultsComparation?.0 == true && resultsComparation?.1 == 0){
-                    print("result 1");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Vertical");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 1){
-                    print("result 2");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Periferico");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 2){
-                    print("result 3");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Espiral");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 3){
-                    print("result 4");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Imposible");
-                }
+                //compare actual state with array of final states
+                self.compararArregloActual();
             }
             else if(dosButton.titleLabel?.text != nil && seisButton.currentTitle == nil){
                 tempButton = dosButton;
@@ -330,35 +279,8 @@ class ViewController: UIViewController {
                 //show movimientos on labelUI
                 self.setLabelMovimientos(movimientos: "\(movimientos)");
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
-                //compare final states
-                var tableroActual = [
-                                [unoButton.titleLabel!.text!, dosButton.titleLabel!.text!, tresButton.titleLabel!.text!, cuatroButton.titleLabel!.text!],
-                                   [cincoButton.titleLabel!.text!, seisButton.titleLabel!.text!, sieteButton.titleLabel!.text!, ochoButton.titleLabel!.text!],
-                                    [nueveButton.titleLabel!.text!, diezButton.titleLabel!.text!, onceButton.titleLabel!.text!, doceButton.titleLabel!.text!],
-                                    [treceButton.titleLabel!.text!, catorceButton.titleLabel!.text!, quinceButton.titleLabel!.text!,
-                                     diesciseisButton.titleLabel!.text!]];
-                self.takenObject?.setTableroActual(tablero: tableroActual);
-                var resultsComparation = self.takenObject?.verificarTablero();
-                if(resultsComparation?.0 == true && resultsComparation?.1 == 0){
-                    print("result 1");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Vertical");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 1){
-                    print("result 2");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Periferico");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 2){
-                    print("result 3");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Espiral");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 3){
-                    print("result 4");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Imposible");
-                }
+                //compare actual state with array of final states
+                self.compararArregloActual();
             }
             else if(dosButton.titleLabel?.text != nil && tresButton.currentTitle == nil){
                 tempButton = dosButton;
@@ -372,35 +294,8 @@ class ViewController: UIViewController {
                 //show movimientos on labelUI
                 self.setLabelMovimientos(movimientos: "\(movimientos)");
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
-                //compare final states
-                var tableroActual = [
-                                [unoButton.titleLabel!.text!, dosButton.titleLabel!.text!, tresButton.titleLabel!.text!, cuatroButton.titleLabel!.text!],
-                                   [cincoButton.titleLabel!.text!, seisButton.titleLabel!.text!, sieteButton.titleLabel!.text!, ochoButton.titleLabel!.text!],
-                                    [nueveButton.titleLabel!.text!, diezButton.titleLabel!.text!, onceButton.titleLabel!.text!, doceButton.titleLabel!.text!],
-                                    [treceButton.titleLabel!.text!, catorceButton.titleLabel!.text!, quinceButton.titleLabel!.text!,
-                                     diesciseisButton.titleLabel!.text!]];
-                self.takenObject?.setTableroActual(tablero: tableroActual);
-                var resultsComparation = self.takenObject?.verificarTablero();
-                if(resultsComparation?.0 == true && resultsComparation?.1 == 0){
-                    print("result 1");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Vertical");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 1){
-                    print("result 2");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Periferico");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 2){
-                    print("result 3");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Espiral");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 3){
-                    print("result 4");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Imposible");
-                }
+                //compare actual state with array of final states
+                self.compararArregloActual();
             }
         case self.tresButton:
             if(tresButton.titleLabel?.text != nil && dosButton.currentTitle == nil){
@@ -415,35 +310,8 @@ class ViewController: UIViewController {
                 //show movimientos on labelUI
                 self.setLabelMovimientos(movimientos: "\(movimientos)");
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
-                //compare final states
-                var tableroActual = [
-                                [unoButton.titleLabel!.text!, dosButton.titleLabel!.text!, tresButton.titleLabel!.text!, cuatroButton.titleLabel!.text!],
-                                   [cincoButton.titleLabel!.text!, seisButton.titleLabel!.text!, sieteButton.titleLabel!.text!, ochoButton.titleLabel!.text!],
-                                    [nueveButton.titleLabel!.text!, diezButton.titleLabel!.text!, onceButton.titleLabel!.text!, doceButton.titleLabel!.text!],
-                                    [treceButton.titleLabel!.text!, catorceButton.titleLabel!.text!, quinceButton.titleLabel!.text!,
-                                     diesciseisButton.titleLabel!.text!]];
-                self.takenObject?.setTableroActual(tablero: tableroActual);
-                var resultsComparation = self.takenObject?.verificarTablero();
-                if(resultsComparation?.0 == true && resultsComparation?.1 == 0){
-                    print("result 1");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Vertical");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 1){
-                    print("result 2");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Periferico");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 2){
-                    print("result 3");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Espiral");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 3){
-                    print("result 4");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Imposible");
-                }
+                //compare actual state with array of final states
+                self.compararArregloActual();
             }
             else if(tresButton.titleLabel?.text != nil && cuatroButton.currentTitle == nil){
                 tempButton = tresButton;
@@ -457,35 +325,8 @@ class ViewController: UIViewController {
                 //show movimientos on labelUI
                 self.setLabelMovimientos(movimientos: "\(movimientos)");
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
-                //compare final states
-                var tableroActual = [
-                                [unoButton.titleLabel!.text!, dosButton.titleLabel!.text!, tresButton.titleLabel!.text!, cuatroButton.titleLabel!.text!],
-                                   [cincoButton.titleLabel!.text!, seisButton.titleLabel!.text!, sieteButton.titleLabel!.text!, ochoButton.titleLabel!.text!],
-                                    [nueveButton.titleLabel!.text!, diezButton.titleLabel!.text!, onceButton.titleLabel!.text!, doceButton.titleLabel!.text!],
-                                    [treceButton.titleLabel!.text!, catorceButton.titleLabel!.text!, quinceButton.titleLabel!.text!,
-                                     diesciseisButton.titleLabel!.text!]];
-                self.takenObject?.setTableroActual(tablero: tableroActual);
-                var resultsComparation = self.takenObject?.verificarTablero();
-                if(resultsComparation?.0 == true && resultsComparation?.1 == 0){
-                    print("result 1");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Vertical");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 1){
-                    print("result 2");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Periferico");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 2){
-                    print("result 3");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Espiral");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 3){
-                    print("result 4");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Imposible");
-                }
+                //compare actual state with array of final states
+                self.compararArregloActual();
             }
             else if(tresButton.titleLabel?.text != nil && sieteButton.currentTitle == nil){
                 tempButton = tresButton;
@@ -499,35 +340,8 @@ class ViewController: UIViewController {
                 //show movimientos on labelUI
                 self.setLabelMovimientos(movimientos: "\(movimientos)");
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
-                //compare final states
-                var tableroActual = [
-                                [unoButton.titleLabel!.text!, dosButton.titleLabel!.text!, tresButton.titleLabel!.text!, cuatroButton.titleLabel!.text!],
-                                   [cincoButton.titleLabel!.text!, seisButton.titleLabel!.text!, sieteButton.titleLabel!.text!, ochoButton.titleLabel!.text!],
-                                    [nueveButton.titleLabel!.text!, diezButton.titleLabel!.text!, onceButton.titleLabel!.text!, doceButton.titleLabel!.text!],
-                                    [treceButton.titleLabel!.text!, catorceButton.titleLabel!.text!, quinceButton.titleLabel!.text!,
-                                     diesciseisButton.titleLabel!.text!]];
-                self.takenObject?.setTableroActual(tablero: tableroActual);
-                var resultsComparation = self.takenObject?.verificarTablero();
-                if(resultsComparation?.0 == true && resultsComparation?.1 == 0){
-                    print("result 1");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Vertical");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 1){
-                    print("result 2");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Periferico");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 2){
-                    print("result 3");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Espiral");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 3){
-                    print("result 4");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Imposible");
-                }
+                //compare actual state with array of final states
+                self.compararArregloActual();
                 
             }
         case self.cuatroButton:
@@ -543,35 +357,8 @@ class ViewController: UIViewController {
                 //show movimientos on labelUI
                 self.setLabelMovimientos(movimientos: "\(movimientos)");
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
-                //compare final states
-                var tableroActual = [
-                                [unoButton.titleLabel!.text!, dosButton.titleLabel!.text!, tresButton.titleLabel!.text!, cuatroButton.titleLabel!.text!],
-                                   [cincoButton.titleLabel!.text!, seisButton.titleLabel!.text!, sieteButton.titleLabel!.text!, ochoButton.titleLabel!.text!],
-                                    [nueveButton.titleLabel!.text!, diezButton.titleLabel!.text!, onceButton.titleLabel!.text!, doceButton.titleLabel!.text!],
-                                    [treceButton.titleLabel!.text!, catorceButton.titleLabel!.text!, quinceButton.titleLabel!.text!,
-                                     diesciseisButton.titleLabel!.text!]];
-                self.takenObject?.setTableroActual(tablero: tableroActual);
-                var resultsComparation = self.takenObject?.verificarTablero();
-                if(resultsComparation?.0 == true && resultsComparation?.1 == 0){
-                    print("result 1");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Vertical");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 1){
-                    print("result 2");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Periferico");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 2){
-                    print("result 3");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Espiral");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 3){
-                    print("result 4");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Imposible");
-                }
+                //compare actual state with array of final states
+                self.compararArregloActual();
             }
             else if(cuatroButton.titleLabel?.text != nil && ochoButton.currentTitle == nil){
                 tempButton = cuatroButton;
@@ -585,35 +372,8 @@ class ViewController: UIViewController {
                 //show movimientos on labelUI
                 self.setLabelMovimientos(movimientos: "\(movimientos)");
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
-                //compare final states
-                var tableroActual = [
-                                [unoButton.titleLabel!.text!, dosButton.titleLabel!.text!, tresButton.titleLabel!.text!, cuatroButton.titleLabel!.text!],
-                                   [cincoButton.titleLabel!.text!, seisButton.titleLabel!.text!, sieteButton.titleLabel!.text!, ochoButton.titleLabel!.text!],
-                                    [nueveButton.titleLabel!.text!, diezButton.titleLabel!.text!, onceButton.titleLabel!.text!, doceButton.titleLabel!.text!],
-                                    [treceButton.titleLabel!.text!, catorceButton.titleLabel!.text!, quinceButton.titleLabel!.text!,
-                                     diesciseisButton.titleLabel!.text!]];
-                self.takenObject?.setTableroActual(tablero: tableroActual);
-                var resultsComparation = self.takenObject?.verificarTablero();
-                if(resultsComparation?.0 == true && resultsComparation?.1 == 0){
-                    print("result 1");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Vertical");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 1){
-                    print("result 2");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Periferico");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 2){
-                    print("result 3");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Espiral");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 3){
-                    print("result 4");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Imposible");
-                }
+                //compare actual state with array of final states
+                self.compararArregloActual();
             }
             //5, 6, 7, 8
         case self.cincoButton:
@@ -629,35 +389,8 @@ class ViewController: UIViewController {
                 //show movimientos on labelUI
                 self.setLabelMovimientos(movimientos: "\(movimientos)");
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
-                //compare final states
-                var tableroActual = [
-                                [unoButton.titleLabel!.text!, dosButton.titleLabel!.text!, tresButton.titleLabel!.text!, cuatroButton.titleLabel!.text!],
-                                   [cincoButton.titleLabel!.text!, seisButton.titleLabel!.text!, sieteButton.titleLabel!.text!, ochoButton.titleLabel!.text!],
-                                    [nueveButton.titleLabel!.text!, diezButton.titleLabel!.text!, onceButton.titleLabel!.text!, doceButton.titleLabel!.text!],
-                                    [treceButton.titleLabel!.text!, catorceButton.titleLabel!.text!, quinceButton.titleLabel!.text!,
-                                     diesciseisButton.titleLabel!.text!]];
-                self.takenObject?.setTableroActual(tablero: tableroActual);
-                var resultsComparation = self.takenObject?.verificarTablero();
-                if(resultsComparation?.0 == true && resultsComparation?.1 == 0){
-                    print("result 1");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Vertical");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 1){
-                    print("result 2");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Periferico");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 2){
-                    print("result 3");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Espiral");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 3){
-                    print("result 4");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Imposible");
-                }
+                //compare actual state with array of final states
+                self.compararArregloActual();
             }
             else if(cincoButton.titleLabel?.text != nil && seisButton.currentTitle == nil){
                 tempButton = cincoButton;
@@ -671,35 +404,8 @@ class ViewController: UIViewController {
                 //show movimientos on labelUI
                 self.setLabelMovimientos(movimientos: "\(movimientos)");
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
-                //compare final states
-                var tableroActual = [
-                                [unoButton.titleLabel!.text!, dosButton.titleLabel!.text!, tresButton.titleLabel!.text!, cuatroButton.titleLabel!.text!],
-                                   [cincoButton.titleLabel!.text!, seisButton.titleLabel!.text!, sieteButton.titleLabel!.text!, ochoButton.titleLabel!.text!],
-                                    [nueveButton.titleLabel!.text!, diezButton.titleLabel!.text!, onceButton.titleLabel!.text!, doceButton.titleLabel!.text!],
-                                    [treceButton.titleLabel!.text!, catorceButton.titleLabel!.text!, quinceButton.titleLabel!.text!,
-                                     diesciseisButton.titleLabel!.text!]];
-                self.takenObject?.setTableroActual(tablero: tableroActual);
-                var resultsComparation = self.takenObject?.verificarTablero();
-                if(resultsComparation?.0 == true && resultsComparation?.1 == 0){
-                    print("result 1");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Vertical");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 1){
-                    print("result 2");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Periferico");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 2){
-                    print("result 3");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Espiral");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 3){
-                    print("result 4");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Imposible");
-                }
+                //compare actual state with array of final states
+                self.compararArregloActual();
             }
             else if(cincoButton.titleLabel?.text != nil && nueveButton.currentTitle == nil){
                 tempButton = cincoButton;
@@ -713,35 +419,8 @@ class ViewController: UIViewController {
                 //show movimientos on labelUI
                 self.setLabelMovimientos(movimientos: "\(movimientos)");
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
-                //compare final states
-                var tableroActual = [
-                                [unoButton.titleLabel!.text!, dosButton.titleLabel!.text!, tresButton.titleLabel!.text!, cuatroButton.titleLabel!.text!],
-                                   [cincoButton.titleLabel!.text!, seisButton.titleLabel!.text!, sieteButton.titleLabel!.text!, ochoButton.titleLabel!.text!],
-                                    [nueveButton.titleLabel!.text!, diezButton.titleLabel!.text!, onceButton.titleLabel!.text!, doceButton.titleLabel!.text!],
-                                    [treceButton.titleLabel!.text!, catorceButton.titleLabel!.text!, quinceButton.titleLabel!.text!,
-                                     diesciseisButton.titleLabel!.text!]];
-                self.takenObject?.setTableroActual(tablero: tableroActual);
-                var resultsComparation = self.takenObject?.verificarTablero();
-                if(resultsComparation?.0 == true && resultsComparation?.1 == 0){
-                    print("result 1");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Vertical");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 1){
-                    print("result 2");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Periferico");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 2){
-                    print("result 3");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Espiral");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 3){
-                    print("result 4");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Imposible");
-                }
+                //compare actual state with array of final states
+                self.compararArregloActual();
             }
             
         case self.seisButton:
@@ -757,35 +436,8 @@ class ViewController: UIViewController {
                 //show movimientos on labelUI
                 self.setLabelMovimientos(movimientos: "\(movimientos)");
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
-                //compare final states
-                var tableroActual = [
-                                [unoButton.titleLabel!.text!, dosButton.titleLabel!.text!, tresButton.titleLabel!.text!, cuatroButton.titleLabel!.text!],
-                                   [cincoButton.titleLabel!.text!, seisButton.titleLabel!.text!, sieteButton.titleLabel!.text!, ochoButton.titleLabel!.text!],
-                                    [nueveButton.titleLabel!.text!, diezButton.titleLabel!.text!, onceButton.titleLabel!.text!, doceButton.titleLabel!.text!],
-                                    [treceButton.titleLabel!.text!, catorceButton.titleLabel!.text!, quinceButton.titleLabel!.text!,
-                                     diesciseisButton.titleLabel!.text!]];
-                self.takenObject?.setTableroActual(tablero: tableroActual);
-                var resultsComparation = self.takenObject?.verificarTablero();
-                if(resultsComparation?.0 == true && resultsComparation?.1 == 0){
-                    print("result 1");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Vertical");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 1){
-                    print("result 2");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Periferico");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 2){
-                    print("result 3");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Espiral");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 3){
-                    print("result 4");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Imposible");
-                }
+                //compare actual state with array of final states
+                self.compararArregloActual();
             }
             else if(seisButton.titleLabel?.text != nil && dosButton.currentTitle == nil){
                 tempButton = seisButton;
@@ -799,35 +451,8 @@ class ViewController: UIViewController {
                 //show movimientos on labelUI
                 self.setLabelMovimientos(movimientos: "\(movimientos)");
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
-                //compare final states
-                var tableroActual = [
-                                [unoButton.titleLabel!.text!, dosButton.titleLabel!.text!, tresButton.titleLabel!.text!, cuatroButton.titleLabel!.text!],
-                                   [cincoButton.titleLabel!.text!, seisButton.titleLabel!.text!, sieteButton.titleLabel!.text!, ochoButton.titleLabel!.text!],
-                                    [nueveButton.titleLabel!.text!, diezButton.titleLabel!.text!, onceButton.titleLabel!.text!, doceButton.titleLabel!.text!],
-                                    [treceButton.titleLabel!.text!, catorceButton.titleLabel!.text!, quinceButton.titleLabel!.text!,
-                                     diesciseisButton.titleLabel!.text!]];
-                self.takenObject?.setTableroActual(tablero: tableroActual);
-                var resultsComparation = self.takenObject?.verificarTablero();
-                if(resultsComparation?.0 == true && resultsComparation?.1 == 0){
-                    print("result 1");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Vertical");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 1){
-                    print("result 2");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Periferico");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 2){
-                    print("result 3");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Espiral");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 3){
-                    print("result 4");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Imposible");
-                }
+                //compare actual state with array of final states
+                self.compararArregloActual();
             }
             else if(seisButton.titleLabel?.text != nil && sieteButton.currentTitle == nil){
                 tempButton = seisButton;
@@ -841,35 +466,8 @@ class ViewController: UIViewController {
                 //show movimientos on labelUI
                 self.setLabelMovimientos(movimientos: "\(movimientos)");
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
-                //compare final states
-                var tableroActual = [
-                                [unoButton.titleLabel!.text!, dosButton.titleLabel!.text!, tresButton.titleLabel!.text!, cuatroButton.titleLabel!.text!],
-                                   [cincoButton.titleLabel!.text!, seisButton.titleLabel!.text!, sieteButton.titleLabel!.text!, ochoButton.titleLabel!.text!],
-                                    [nueveButton.titleLabel!.text!, diezButton.titleLabel!.text!, onceButton.titleLabel!.text!, doceButton.titleLabel!.text!],
-                                    [treceButton.titleLabel!.text!, catorceButton.titleLabel!.text!, quinceButton.titleLabel!.text!,
-                                     diesciseisButton.titleLabel!.text!]];
-                self.takenObject?.setTableroActual(tablero: tableroActual);
-                var resultsComparation = self.takenObject?.verificarTablero();
-                if(resultsComparation?.0 == true && resultsComparation?.1 == 0){
-                    print("result 1");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Vertical");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 1){
-                    print("result 2");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Periferico");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 2){
-                    print("result 3");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Espiral");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 3){
-                    print("result 4");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Imposible");
-                }
+                //compare actual state with array of final states
+                self.compararArregloActual();
             }
             else if(seisButton.titleLabel?.text != nil && diezButton.currentTitle == nil){
                 tempButton = seisButton;
@@ -883,35 +481,8 @@ class ViewController: UIViewController {
                 //show movimientos on labelUI
                 self.setLabelMovimientos(movimientos: "\(movimientos)");
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
-                //compare final states
-                var tableroActual = [
-                                [unoButton.titleLabel!.text!, dosButton.titleLabel!.text!, tresButton.titleLabel!.text!, cuatroButton.titleLabel!.text!],
-                                   [cincoButton.titleLabel!.text!, seisButton.titleLabel!.text!, sieteButton.titleLabel!.text!, ochoButton.titleLabel!.text!],
-                                    [nueveButton.titleLabel!.text!, diezButton.titleLabel!.text!, onceButton.titleLabel!.text!, doceButton.titleLabel!.text!],
-                                    [treceButton.titleLabel!.text!, catorceButton.titleLabel!.text!, quinceButton.titleLabel!.text!,
-                                     diesciseisButton.titleLabel!.text!]];
-                self.takenObject?.setTableroActual(tablero: tableroActual);
-                var resultsComparation = self.takenObject?.verificarTablero();
-                if(resultsComparation?.0 == true && resultsComparation?.1 == 0){
-                    print("result 1");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Vertical");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 1){
-                    print("result 2");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Periferico");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 2){
-                    print("result 3");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Espiral");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 3){
-                    print("result 4");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Imposible");
-                }
+                //compare actual state with array of final states
+                self.compararArregloActual();
             }
         case self.sieteButton:
             if(sieteButton.titleLabel?.text != nil && seisButton.currentTitle == nil){
@@ -926,35 +497,8 @@ class ViewController: UIViewController {
                 //show movimientos on labelUI
                 self.setLabelMovimientos(movimientos: "\(movimientos)");
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
-                //compare final states
-                var tableroActual = [
-                                [unoButton.titleLabel!.text!, dosButton.titleLabel!.text!, tresButton.titleLabel!.text!, cuatroButton.titleLabel!.text!],
-                                   [cincoButton.titleLabel!.text!, seisButton.titleLabel!.text!, sieteButton.titleLabel!.text!, ochoButton.titleLabel!.text!],
-                                    [nueveButton.titleLabel!.text!, diezButton.titleLabel!.text!, onceButton.titleLabel!.text!, doceButton.titleLabel!.text!],
-                                    [treceButton.titleLabel!.text!, catorceButton.titleLabel!.text!, quinceButton.titleLabel!.text!,
-                                     diesciseisButton.titleLabel!.text!]];
-                self.takenObject?.setTableroActual(tablero: tableroActual);
-                var resultsComparation = self.takenObject?.verificarTablero();
-                if(resultsComparation?.0 == true && resultsComparation?.1 == 0){
-                    print("result 1");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Vertical");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 1){
-                    print("result 2");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Periferico");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 2){
-                    print("result 3");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Espiral");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 3){
-                    print("result 4");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Imposible");
-                }
+                //compare actual state with array of final states
+                self.compararArregloActual();
             }
             else if(sieteButton.titleLabel?.text != nil && tresButton.currentTitle == nil){
                 tempButton = sieteButton;
@@ -968,35 +512,8 @@ class ViewController: UIViewController {
                 //show movimientos on labelUI
                 self.setLabelMovimientos(movimientos: "\(movimientos)");
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
-                //compare final states
-                var tableroActual = [
-                                [unoButton.titleLabel!.text!, dosButton.titleLabel!.text!, tresButton.titleLabel!.text!, cuatroButton.titleLabel!.text!],
-                                   [cincoButton.titleLabel!.text!, seisButton.titleLabel!.text!, sieteButton.titleLabel!.text!, ochoButton.titleLabel!.text!],
-                                    [nueveButton.titleLabel!.text!, diezButton.titleLabel!.text!, onceButton.titleLabel!.text!, doceButton.titleLabel!.text!],
-                                    [treceButton.titleLabel!.text!, catorceButton.titleLabel!.text!, quinceButton.titleLabel!.text!,
-                                     diesciseisButton.titleLabel!.text!]];
-                self.takenObject?.setTableroActual(tablero: tableroActual);
-                var resultsComparation = self.takenObject?.verificarTablero();
-                if(resultsComparation?.0 == true && resultsComparation?.1 == 0){
-                    print("result 1");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Vertical");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 1){
-                    print("result 2");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Periferico");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 2){
-                    print("result 3");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Espiral");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 3){
-                    print("result 4");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Imposible");
-                }
+                //compare actual state with array of final states
+                self.compararArregloActual();
             }
             else if(sieteButton.titleLabel?.text != nil && ochoButton.currentTitle == nil){
                 tempButton = sieteButton;
@@ -1010,35 +527,8 @@ class ViewController: UIViewController {
                 //show movimientos on labelUI
                 self.setLabelMovimientos(movimientos: "\(movimientos)");
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
-                //compare final states
-                var tableroActual = [
-                                [unoButton.titleLabel!.text!, dosButton.titleLabel!.text!, tresButton.titleLabel!.text!, cuatroButton.titleLabel!.text!],
-                                   [cincoButton.titleLabel!.text!, seisButton.titleLabel!.text!, sieteButton.titleLabel!.text!, ochoButton.titleLabel!.text!],
-                                    [nueveButton.titleLabel!.text!, diezButton.titleLabel!.text!, onceButton.titleLabel!.text!, doceButton.titleLabel!.text!],
-                                    [treceButton.titleLabel!.text!, catorceButton.titleLabel!.text!, quinceButton.titleLabel!.text!,
-                                     diesciseisButton.titleLabel!.text!]];
-                self.takenObject?.setTableroActual(tablero: tableroActual);
-                var resultsComparation = self.takenObject?.verificarTablero();
-                if(resultsComparation?.0 == true && resultsComparation?.1 == 0){
-                    print("result 1");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Vertical");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 1){
-                    print("result 2");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Periferico");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 2){
-                    print("result 3");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Espiral");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 3){
-                    print("result 4");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Imposible");
-                }
+                //compare actual state with array of final states
+                self.compararArregloActual();
             }
             else if(sieteButton.titleLabel?.text != nil && onceButton.currentTitle == nil){
                 tempButton = sieteButton;
@@ -1052,35 +542,8 @@ class ViewController: UIViewController {
                 //show movimientos on labelUI
                 self.setLabelMovimientos(movimientos: "\(movimientos)");
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
-                //compare final states
-                var tableroActual = [
-                                [unoButton.titleLabel!.text!, dosButton.titleLabel!.text!, tresButton.titleLabel!.text!, cuatroButton.titleLabel!.text!],
-                                   [cincoButton.titleLabel!.text!, seisButton.titleLabel!.text!, sieteButton.titleLabel!.text!, ochoButton.titleLabel!.text!],
-                                    [nueveButton.titleLabel!.text!, diezButton.titleLabel!.text!, onceButton.titleLabel!.text!, doceButton.titleLabel!.text!],
-                                    [treceButton.titleLabel!.text!, catorceButton.titleLabel!.text!, quinceButton.titleLabel!.text!,
-                                     diesciseisButton.titleLabel!.text!]];
-                self.takenObject?.setTableroActual(tablero: tableroActual);
-                var resultsComparation = self.takenObject?.verificarTablero();
-                if(resultsComparation?.0 == true && resultsComparation?.1 == 0){
-                    print("result 1");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Vertical");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 1){
-                    print("result 2");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Periferico");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 2){
-                    print("result 3");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Espiral");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 3){
-                    print("result 4");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Imposible");
-                }
+                //compare actual state with array of final states
+                self.compararArregloActual();
             }
             case self.ochoButton:
             if(ochoButton.titleLabel?.text != nil && sieteButton.currentTitle == nil){
@@ -1095,35 +558,8 @@ class ViewController: UIViewController {
                 //show movimientos on labelUI
                 self.setLabelMovimientos(movimientos: "\(movimientos)");
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
-                //compare final states
-                var tableroActual = [
-                                [unoButton.titleLabel!.text!, dosButton.titleLabel!.text!, tresButton.titleLabel!.text!, cuatroButton.titleLabel!.text!],
-                                   [cincoButton.titleLabel!.text!, seisButton.titleLabel!.text!, sieteButton.titleLabel!.text!, ochoButton.titleLabel!.text!],
-                                    [nueveButton.titleLabel!.text!, diezButton.titleLabel!.text!, onceButton.titleLabel!.text!, doceButton.titleLabel!.text!],
-                                    [treceButton.titleLabel!.text!, catorceButton.titleLabel!.text!, quinceButton.titleLabel!.text!,
-                                     diesciseisButton.titleLabel!.text!]];
-                self.takenObject?.setTableroActual(tablero: tableroActual);
-                var resultsComparation = self.takenObject?.verificarTablero();
-                if(resultsComparation?.0 == true && resultsComparation?.1 == 0){
-                    print("result 1");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Vertical");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 1){
-                    print("result 2");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Periferico");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 2){
-                    print("result 3");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Espiral");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 3){
-                    print("result 4");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Imposible");
-                }
+                //compare actual state with array of final states
+                self.compararArregloActual();
             }
             if(ochoButton.titleLabel?.text != nil && cuatroButton.currentTitle == nil){
                 tempButton = ochoButton;
@@ -1137,35 +573,8 @@ class ViewController: UIViewController {
                 //show movimientos on labelUI
                 self.setLabelMovimientos(movimientos: "\(movimientos)");
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
-                //compare final states
-                var tableroActual = [
-                                [unoButton.titleLabel!.text!, dosButton.titleLabel!.text!, tresButton.titleLabel!.text!, cuatroButton.titleLabel!.text!],
-                                   [cincoButton.titleLabel!.text!, seisButton.titleLabel!.text!, sieteButton.titleLabel!.text!, ochoButton.titleLabel!.text!],
-                                    [nueveButton.titleLabel!.text!, diezButton.titleLabel!.text!, onceButton.titleLabel!.text!, doceButton.titleLabel!.text!],
-                                    [treceButton.titleLabel!.text!, catorceButton.titleLabel!.text!, quinceButton.titleLabel!.text!,
-                                     diesciseisButton.titleLabel!.text!]];
-                self.takenObject?.setTableroActual(tablero: tableroActual);
-                var resultsComparation = self.takenObject?.verificarTablero();
-                if(resultsComparation?.0 == true && resultsComparation?.1 == 0){
-                    print("result 1");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Vertical");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 1){
-                    print("result 2");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Periferico");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 2){
-                    print("result 3");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Espiral");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 3){
-                    print("result 4");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Imposible");
-                }
+                //compare actual state with array of final states
+                self.compararArregloActual();
             }
             if(ochoButton.titleLabel?.text != nil && doceButton.currentTitle == nil){
                 tempButton = ochoButton;
@@ -1179,35 +588,8 @@ class ViewController: UIViewController {
                 //show movimientos on labelUI
                 self.setLabelMovimientos(movimientos: "\(movimientos)");
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
-                //compare final states
-                var tableroActual = [
-                                [unoButton.titleLabel!.text!, dosButton.titleLabel!.text!, tresButton.titleLabel!.text!, cuatroButton.titleLabel!.text!],
-                                   [cincoButton.titleLabel!.text!, seisButton.titleLabel!.text!, sieteButton.titleLabel!.text!, ochoButton.titleLabel!.text!],
-                                    [nueveButton.titleLabel!.text!, diezButton.titleLabel!.text!, onceButton.titleLabel!.text!, doceButton.titleLabel!.text!],
-                                    [treceButton.titleLabel!.text!, catorceButton.titleLabel!.text!, quinceButton.titleLabel!.text!,
-                                     diesciseisButton.titleLabel!.text!]];
-                self.takenObject?.setTableroActual(tablero: tableroActual);
-                var resultsComparation = self.takenObject?.verificarTablero();
-                if(resultsComparation?.0 == true && resultsComparation?.1 == 0){
-                    print("result 1");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Vertical");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 1){
-                    print("result 2");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Periferico");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 2){
-                    print("result 3");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Espiral");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 3){
-                    print("result 4");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Imposible");
-                }
+                //compare actual state with array of final states
+                self.compararArregloActual();
             }
             //9, 10, 11, 12
         case self.nueveButton:
@@ -1223,35 +605,8 @@ class ViewController: UIViewController {
                 //show movimientos on labelUI
                 self.setLabelMovimientos(movimientos: "\(movimientos)");
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
-                //compare final states
-                var tableroActual = [
-                                [unoButton.titleLabel!.text!, dosButton.titleLabel!.text!, tresButton.titleLabel!.text!, cuatroButton.titleLabel!.text!],
-                                   [cincoButton.titleLabel!.text!, seisButton.titleLabel!.text!, sieteButton.titleLabel!.text!, ochoButton.titleLabel!.text!],
-                                    [nueveButton.titleLabel!.text!, diezButton.titleLabel!.text!, onceButton.titleLabel!.text!, doceButton.titleLabel!.text!],
-                                    [treceButton.titleLabel!.text!, catorceButton.titleLabel!.text!, quinceButton.titleLabel!.text!,
-                                     diesciseisButton.titleLabel!.text!]];
-                self.takenObject?.setTableroActual(tablero: tableroActual);
-                var resultsComparation = self.takenObject?.verificarTablero();
-                if(resultsComparation?.0 == true && resultsComparation?.1 == 0){
-                    print("result 1");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Vertical");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 1){
-                    print("result 2");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Periferico");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 2){
-                    print("result 3");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Espiral");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 3){
-                    print("result 4");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Imposible");
-                }
+                //compare actual state with array of final states
+                self.compararArregloActual();
             }
             if(nueveButton.titleLabel?.text != nil && diezButton.currentTitle == nil){
                 tempButton = nueveButton;
@@ -1265,35 +620,8 @@ class ViewController: UIViewController {
                 //show movimientos on labelUI
                 self.setLabelMovimientos(movimientos: "\(movimientos)");
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
-                //compare final states
-                var tableroActual = [
-                                [unoButton.titleLabel!.text!, dosButton.titleLabel!.text!, tresButton.titleLabel!.text!, cuatroButton.titleLabel!.text!],
-                                   [cincoButton.titleLabel!.text!, seisButton.titleLabel!.text!, sieteButton.titleLabel!.text!, ochoButton.titleLabel!.text!],
-                                    [nueveButton.titleLabel!.text!, diezButton.titleLabel!.text!, onceButton.titleLabel!.text!, doceButton.titleLabel!.text!],
-                                    [treceButton.titleLabel!.text!, catorceButton.titleLabel!.text!, quinceButton.titleLabel!.text!,
-                                     diesciseisButton.titleLabel!.text!]];
-                self.takenObject?.setTableroActual(tablero: tableroActual);
-                var resultsComparation = self.takenObject?.verificarTablero();
-                if(resultsComparation?.0 == true && resultsComparation?.1 == 0){
-                    print("result 1");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Vertical");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 1){
-                    print("result 2");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Periferico");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 2){
-                    print("result 3");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Espiral");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 3){
-                    print("result 4");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Imposible");
-                }
+                //compare actual state with array of final states
+                self.compararArregloActual();
             }
             if(nueveButton.titleLabel?.text != nil && treceButton.currentTitle == nil){
                 tempButton = nueveButton;
@@ -1307,35 +635,8 @@ class ViewController: UIViewController {
                 //show movimientos on labelUI
                 self.setLabelMovimientos(movimientos: "\(movimientos)");
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
-                //compare final states
-                var tableroActual = [
-                                [unoButton.titleLabel!.text!, dosButton.titleLabel!.text!, tresButton.titleLabel!.text!, cuatroButton.titleLabel!.text!],
-                                   [cincoButton.titleLabel!.text!, seisButton.titleLabel!.text!, sieteButton.titleLabel!.text!, ochoButton.titleLabel!.text!],
-                                    [nueveButton.titleLabel!.text!, diezButton.titleLabel!.text!, onceButton.titleLabel!.text!, doceButton.titleLabel!.text!],
-                                    [treceButton.titleLabel!.text!, catorceButton.titleLabel!.text!, quinceButton.titleLabel!.text!,
-                                     diesciseisButton.titleLabel!.text!]];
-                self.takenObject?.setTableroActual(tablero: tableroActual);
-                var resultsComparation = self.takenObject?.verificarTablero();
-                if(resultsComparation?.0 == true && resultsComparation?.1 == 0){
-                    print("result 1");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Vertical");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 1){
-                    print("result 2");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Periferico");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 2){
-                    print("result 3");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Espiral");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 3){
-                    print("result 4");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Imposible");
-                }
+                //compare actual state with array of final states
+                self.compararArregloActual();
             }
         case self.diezButton:
             if(diezButton.titleLabel?.text != nil && nueveButton.currentTitle == nil){
@@ -1350,35 +651,8 @@ class ViewController: UIViewController {
                 //show movimientos on labelUI
                 self.setLabelMovimientos(movimientos: "\(movimientos)");
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
-                //compare final states
-                var tableroActual = [
-                                [unoButton.titleLabel!.text!, dosButton.titleLabel!.text!, tresButton.titleLabel!.text!, cuatroButton.titleLabel!.text!],
-                                   [cincoButton.titleLabel!.text!, seisButton.titleLabel!.text!, sieteButton.titleLabel!.text!, ochoButton.titleLabel!.text!],
-                                    [nueveButton.titleLabel!.text!, diezButton.titleLabel!.text!, onceButton.titleLabel!.text!, doceButton.titleLabel!.text!],
-                                    [treceButton.titleLabel!.text!, catorceButton.titleLabel!.text!, quinceButton.titleLabel!.text!,
-                                     diesciseisButton.titleLabel!.text!]];
-                self.takenObject?.setTableroActual(tablero: tableroActual);
-                var resultsComparation = self.takenObject?.verificarTablero();
-                if(resultsComparation?.0 == true && resultsComparation?.1 == 0){
-                    print("result 1");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Vertical");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 1){
-                    print("result 2");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Periferico");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 2){
-                    print("result 3");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Espiral");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 3){
-                    print("result 4");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Imposible");
-                }
+                //compare actual state with array of final states
+                self.compararArregloActual();
             }
             if(diezButton.titleLabel?.text != nil && seisButton.currentTitle == nil){
                 tempButton = diezButton;
@@ -1392,35 +666,8 @@ class ViewController: UIViewController {
                 //show movimientos on labelUI
                 self.setLabelMovimientos(movimientos: "\(movimientos)");
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
-                //compare final states
-                var tableroActual = [
-                                [unoButton.titleLabel!.text!, dosButton.titleLabel!.text!, tresButton.titleLabel!.text!, cuatroButton.titleLabel!.text!],
-                                   [cincoButton.titleLabel!.text!, seisButton.titleLabel!.text!, sieteButton.titleLabel!.text!, ochoButton.titleLabel!.text!],
-                                    [nueveButton.titleLabel!.text!, diezButton.titleLabel!.text!, onceButton.titleLabel!.text!, doceButton.titleLabel!.text!],
-                                    [treceButton.titleLabel!.text!, catorceButton.titleLabel!.text!, quinceButton.titleLabel!.text!,
-                                     diesciseisButton.titleLabel!.text!]];
-                self.takenObject?.setTableroActual(tablero: tableroActual);
-                var resultsComparation = self.takenObject?.verificarTablero();
-                if(resultsComparation?.0 == true && resultsComparation?.1 == 0){
-                    print("result 1");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Vertical");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 1){
-                    print("result 2");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Periferico");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 2){
-                    print("result 3");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Espiral");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 3){
-                    print("result 4");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Imposible");
-                }
+                //compare actual state with array of final states
+                self.compararArregloActual();
             }
             if(diezButton.titleLabel?.text != nil && onceButton.currentTitle == nil){
                 tempButton = diezButton;
@@ -1434,35 +681,9 @@ class ViewController: UIViewController {
                 //show movimientos on labelUI
                 self.setLabelMovimientos(movimientos: "\(movimientos)");
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
-                //compare final states
-                var tableroActual = [
-                                [unoButton.titleLabel!.text!, dosButton.titleLabel!.text!, tresButton.titleLabel!.text!, cuatroButton.titleLabel!.text!],
-                                   [cincoButton.titleLabel!.text!, seisButton.titleLabel!.text!, sieteButton.titleLabel!.text!, ochoButton.titleLabel!.text!],
-                                    [nueveButton.titleLabel!.text!, diezButton.titleLabel!.text!, onceButton.titleLabel!.text!, doceButton.titleLabel!.text!],
-                                    [treceButton.titleLabel!.text!, catorceButton.titleLabel!.text!, quinceButton.titleLabel!.text!,
-                                     diesciseisButton.titleLabel!.text!]];
-                self.takenObject?.setTableroActual(tablero: tableroActual);
-                var resultsComparation = self.takenObject?.verificarTablero();
-                if(resultsComparation?.0 == true && resultsComparation?.1 == 0){
-                    print("result 1");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Vertical");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 1){
-                    print("result 2");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Periferico");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 2){
-                    print("result 3");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Espiral");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 3){
-                    print("result 4");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Imposible");
-                }
+                //compare actual state with array of final states
+                self.compararArregloActual();
+//
             }
             if(diezButton.titleLabel?.text != nil && catorceButton.currentTitle == nil){
                 tempButton = diezButton;
@@ -1476,35 +697,8 @@ class ViewController: UIViewController {
                 //show movimientos on labelUI
                 self.setLabelMovimientos(movimientos: "\(movimientos)");
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
-                //compare final states
-                var tableroActual = [
-                                [unoButton.titleLabel!.text!, dosButton.titleLabel!.text!, tresButton.titleLabel!.text!, cuatroButton.titleLabel!.text!],
-                                   [cincoButton.titleLabel!.text!, seisButton.titleLabel!.text!, sieteButton.titleLabel!.text!, ochoButton.titleLabel!.text!],
-                                    [nueveButton.titleLabel!.text!, diezButton.titleLabel!.text!, onceButton.titleLabel!.text!, doceButton.titleLabel!.text!],
-                                    [treceButton.titleLabel!.text!, catorceButton.titleLabel!.text!, quinceButton.titleLabel!.text!,
-                                     diesciseisButton.titleLabel!.text!]];
-                self.takenObject?.setTableroActual(tablero: tableroActual);
-                var resultsComparation = self.takenObject?.verificarTablero();
-                if(resultsComparation?.0 == true && resultsComparation?.1 == 0){
-                    print("result 1");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Vertical");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 1){
-                    print("result 2");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Periferico");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 2){
-                    print("result 3");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Espiral");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 3){
-                    print("result 4");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Imposible");
-                }
+                //compare actual state with array of final states
+                self.compararArregloActual();
             }
             case self.onceButton:
             if(onceButton.titleLabel?.text != nil && diezButton.currentTitle == nil){
@@ -1519,35 +713,8 @@ class ViewController: UIViewController {
                 //show movimientos on labelUI
                 self.setLabelMovimientos(movimientos: "\(movimientos)");
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
-                //compare final states
-                var tableroActual = [
-                                [unoButton.titleLabel!.text!, dosButton.titleLabel!.text!, tresButton.titleLabel!.text!, cuatroButton.titleLabel!.text!],
-                                   [cincoButton.titleLabel!.text!, seisButton.titleLabel!.text!, sieteButton.titleLabel!.text!, ochoButton.titleLabel!.text!],
-                                    [nueveButton.titleLabel!.text!, diezButton.titleLabel!.text!, onceButton.titleLabel!.text!, doceButton.titleLabel!.text!],
-                                    [treceButton.titleLabel!.text!, catorceButton.titleLabel!.text!, quinceButton.titleLabel!.text!,
-                                     diesciseisButton.titleLabel!.text!]];
-                self.takenObject?.setTableroActual(tablero: tableroActual);
-                var resultsComparation = self.takenObject?.verificarTablero();
-                if(resultsComparation?.0 == true && resultsComparation?.1 == 0){
-                    print("result 1");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Vertical");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 1){
-                    print("result 2");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Periferico");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 2){
-                    print("result 3");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Espiral");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 3){
-                    print("result 4");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Imposible");
-                }
+                //compare actual state with array of final states
+                self.compararArregloActual();
             }
             else if(onceButton.titleLabel?.text != nil && sieteButton.currentTitle == nil){
                 tempButton = onceButton;
@@ -1561,35 +728,8 @@ class ViewController: UIViewController {
                 //show movimientos on labelUI
                 self.setLabelMovimientos(movimientos: "\(movimientos)");
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
-                //compare final states
-                var tableroActual = [
-                                [unoButton.titleLabel!.text!, dosButton.titleLabel!.text!, tresButton.titleLabel!.text!, cuatroButton.titleLabel!.text!],
-                                   [cincoButton.titleLabel!.text!, seisButton.titleLabel!.text!, sieteButton.titleLabel!.text!, ochoButton.titleLabel!.text!],
-                                    [nueveButton.titleLabel!.text!, diezButton.titleLabel!.text!, onceButton.titleLabel!.text!, doceButton.titleLabel!.text!],
-                                    [treceButton.titleLabel!.text!, catorceButton.titleLabel!.text!, quinceButton.titleLabel!.text!,
-                                     diesciseisButton.titleLabel!.text!]];
-                self.takenObject?.setTableroActual(tablero: tableroActual);
-                var resultsComparation = self.takenObject?.verificarTablero();
-                if(resultsComparation?.0 == true && resultsComparation?.1 == 0){
-                    print("result 1");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Vertical");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 1){
-                    print("result 2");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Periferico");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 2){
-                    print("result 3");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Espiral");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 3){
-                    print("result 4");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Imposible");
-                }
+                //compare actual state with array of final states
+                self.compararArregloActual();
             }
             else if(onceButton.titleLabel?.text != nil && doceButton.currentTitle == nil){
                 tempButton = onceButton;
@@ -1603,35 +743,8 @@ class ViewController: UIViewController {
                 //show movimientos on labelUI
                 self.setLabelMovimientos(movimientos: "\(movimientos)");
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
-                //compare final states
-                var tableroActual = [
-                                [unoButton.titleLabel!.text!, dosButton.titleLabel!.text!, tresButton.titleLabel!.text!, cuatroButton.titleLabel!.text!],
-                                   [cincoButton.titleLabel!.text!, seisButton.titleLabel!.text!, sieteButton.titleLabel!.text!, ochoButton.titleLabel!.text!],
-                                    [nueveButton.titleLabel!.text!, diezButton.titleLabel!.text!, onceButton.titleLabel!.text!, doceButton.titleLabel!.text!],
-                                    [treceButton.titleLabel!.text!, catorceButton.titleLabel!.text!, quinceButton.titleLabel!.text!,
-                                     diesciseisButton.titleLabel!.text!]];
-                self.takenObject?.setTableroActual(tablero: tableroActual);
-                var resultsComparation = self.takenObject?.verificarTablero();
-                if(resultsComparation?.0 == true && resultsComparation?.1 == 0){
-                    print("result 1");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Vertical");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 1){
-                    print("result 2");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Periferico");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 2){
-                    print("result 3");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Espiral");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 3){
-                    print("result 4");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Imposible");
-                }
+                //compare actual state with array of final states
+                self.compararArregloActual();
             }
             else if(onceButton.titleLabel?.text != nil && doceButton.currentTitle == nil){
                 tempButton = onceButton;
@@ -1645,35 +758,8 @@ class ViewController: UIViewController {
                 //show movimientos on labelUI
                 self.setLabelMovimientos(movimientos: "\(movimientos)");
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
-                //compare final states
-                var tableroActual = [
-                                [unoButton.titleLabel!.text!, dosButton.titleLabel!.text!, tresButton.titleLabel!.text!, cuatroButton.titleLabel!.text!],
-                                   [cincoButton.titleLabel!.text!, seisButton.titleLabel!.text!, sieteButton.titleLabel!.text!, ochoButton.titleLabel!.text!],
-                                    [nueveButton.titleLabel!.text!, diezButton.titleLabel!.text!, onceButton.titleLabel!.text!, doceButton.titleLabel!.text!],
-                                    [treceButton.titleLabel!.text!, catorceButton.titleLabel!.text!, quinceButton.titleLabel!.text!,
-                                     diesciseisButton.titleLabel!.text!]];
-                self.takenObject?.setTableroActual(tablero: tableroActual);
-                var resultsComparation = self.takenObject?.verificarTablero();
-                if(resultsComparation?.0 == true && resultsComparation?.1 == 0){
-                    print("result 1");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Vertical");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 1){
-                    print("result 2");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Periferico");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 2){
-                    print("result 3");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Espiral");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 3){
-                    print("result 4");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Imposible");
-                }
+                //compare actual state with array of final states
+                self.compararArregloActual();
             }
             else if(onceButton.titleLabel?.text != nil && quinceButton.currentTitle == nil){
                 tempButton = onceButton;
@@ -1687,35 +773,8 @@ class ViewController: UIViewController {
                 //show movimientos on labelUI
                 self.setLabelMovimientos(movimientos: "\(movimientos)");
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
-                //compare final states
-                var tableroActual = [
-                                [unoButton.titleLabel!.text!, dosButton.titleLabel!.text!, tresButton.titleLabel!.text!, cuatroButton.titleLabel!.text!],
-                                   [cincoButton.titleLabel!.text!, seisButton.titleLabel!.text!, sieteButton.titleLabel!.text!, ochoButton.titleLabel!.text!],
-                                    [nueveButton.titleLabel!.text!, diezButton.titleLabel!.text!, onceButton.titleLabel!.text!, doceButton.titleLabel!.text!],
-                                    [treceButton.titleLabel!.text!, catorceButton.titleLabel!.text!, quinceButton.titleLabel!.text!,
-                                     diesciseisButton.titleLabel!.text!]];
-                self.takenObject?.setTableroActual(tablero: tableroActual);
-                var resultsComparation = self.takenObject?.verificarTablero();
-                if(resultsComparation?.0 == true && resultsComparation?.1 == 0){
-                    print("result 1");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Vertical");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 1){
-                    print("result 2");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Periferico");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 2){
-                    print("result 3");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Espiral");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 3){
-                    print("result 4");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Imposible");
-                }
+                //compare actual state with array of final states
+                self.compararArregloActual();
             }
         case self.doceButton:
             if(doceButton.titleLabel?.text != nil && onceButton.currentTitle == nil){
@@ -1730,35 +789,8 @@ class ViewController: UIViewController {
                 //show movimientos on labelUI
                 self.setLabelMovimientos(movimientos: "\(movimientos)");
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
-                //compare final states
-                var tableroActual = [
-                                [unoButton.titleLabel!.text!, dosButton.titleLabel!.text!, tresButton.titleLabel!.text!, cuatroButton.titleLabel!.text!],
-                                   [cincoButton.titleLabel!.text!, seisButton.titleLabel!.text!, sieteButton.titleLabel!.text!, ochoButton.titleLabel!.text!],
-                                    [nueveButton.titleLabel!.text!, diezButton.titleLabel!.text!, onceButton.titleLabel!.text!, doceButton.titleLabel!.text!],
-                                    [treceButton.titleLabel!.text!, catorceButton.titleLabel!.text!, quinceButton.titleLabel!.text!,
-                                     diesciseisButton.titleLabel!.text!]];
-                self.takenObject?.setTableroActual(tablero: tableroActual);
-                var resultsComparation = self.takenObject?.verificarTablero();
-                if(resultsComparation?.0 == true && resultsComparation?.1 == 0){
-                    print("result 1");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Vertical");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 1){
-                    print("result 2");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Periferico");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 2){
-                    print("result 3");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Espiral");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 3){
-                    print("result 4");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Imposible");
-                }
+                //compare actual state with array of final states
+                self.compararArregloActual();
              }
             else if(doceButton.titleLabel?.text != nil && ochoButton.currentTitle == nil){
                 tempButton = doceButton;
@@ -1772,35 +804,8 @@ class ViewController: UIViewController {
                 //show movimientos on labelUI
                 self.setLabelMovimientos(movimientos: "\(movimientos)");
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
-                //compare final states
-                var tableroActual = [
-                                [unoButton.titleLabel!.text!, dosButton.titleLabel!.text!, tresButton.titleLabel!.text!, cuatroButton.titleLabel!.text!],
-                                   [cincoButton.titleLabel!.text!, seisButton.titleLabel!.text!, sieteButton.titleLabel!.text!, ochoButton.titleLabel!.text!],
-                                    [nueveButton.titleLabel!.text!, diezButton.titleLabel!.text!, onceButton.titleLabel!.text!, doceButton.titleLabel!.text!],
-                                    [treceButton.titleLabel!.text!, catorceButton.titleLabel!.text!, quinceButton.titleLabel!.text!,
-                                     diesciseisButton.titleLabel!.text!]];
-                self.takenObject?.setTableroActual(tablero: tableroActual);
-                var resultsComparation = self.takenObject?.verificarTablero();
-                if(resultsComparation?.0 == true && resultsComparation?.1 == 0){
-                    print("result 1");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Vertical");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 1){
-                    print("result 2");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Periferico");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 2){
-                    print("result 3");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Espiral");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 3){
-                    print("result 4");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Imposible");
-                }
+                //compare actual state with array of final states
+                self.compararArregloActual();
             }
             else if(doceButton.titleLabel?.text != nil && diesciseisButton.currentTitle == nil){
                 tempButton = doceButton;
@@ -1814,35 +819,8 @@ class ViewController: UIViewController {
                 //show movimientos on labelUI
                 self.setLabelMovimientos(movimientos: "\(movimientos)");
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
-                //compare final states
-                var tableroActual = [
-                                [unoButton.titleLabel!.text!, dosButton.titleLabel!.text!, tresButton.titleLabel!.text!, cuatroButton.titleLabel!.text!],
-                                   [cincoButton.titleLabel!.text!, seisButton.titleLabel!.text!, sieteButton.titleLabel!.text!, ochoButton.titleLabel!.text!],
-                                    [nueveButton.titleLabel!.text!, diezButton.titleLabel!.text!, onceButton.titleLabel!.text!, doceButton.titleLabel!.text!],
-                                    [treceButton.titleLabel!.text!, catorceButton.titleLabel!.text!, quinceButton.titleLabel!.text!,
-                                     diesciseisButton.titleLabel!.text!]];
-                self.takenObject?.setTableroActual(tablero: tableroActual);
-                var resultsComparation = self.takenObject?.verificarTablero();
-                if(resultsComparation?.0 == true && resultsComparation?.1 == 0){
-                    print("result 1");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Vertical");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 1){
-                    print("result 2");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Periferico");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 2){
-                    print("result 3");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Espiral");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 3){
-                    print("result 4");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Imposible");
-                }
+                //compare actual state with array of final states
+                self.compararArregloActual();
             }
             //13, 14, 15, 16
         case self.treceButton:
@@ -1858,35 +836,8 @@ class ViewController: UIViewController {
                 //show movimientos on labelUI
                 self.setLabelMovimientos(movimientos: "\(movimientos)");
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
-                //compare final states
-                var tableroActual = [
-                                [unoButton.titleLabel!.text!, dosButton.titleLabel!.text!, tresButton.titleLabel!.text!, cuatroButton.titleLabel!.text!],
-                                   [cincoButton.titleLabel!.text!, seisButton.titleLabel!.text!, sieteButton.titleLabel!.text!, ochoButton.titleLabel!.text!],
-                                    [nueveButton.titleLabel!.text!, diezButton.titleLabel!.text!, onceButton.titleLabel!.text!, doceButton.titleLabel!.text!],
-                                    [treceButton.titleLabel!.text!, catorceButton.titleLabel!.text!, quinceButton.titleLabel!.text!,
-                                     diesciseisButton.titleLabel!.text!]];
-                self.takenObject?.setTableroActual(tablero: tableroActual);
-                var resultsComparation = self.takenObject?.verificarTablero();
-                if(resultsComparation?.0 == true && resultsComparation?.1 == 0){
-                    print("result 1");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Vertical");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 1){
-                    print("result 2");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Periferico");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 2){
-                    print("result 3");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Espiral");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 3){
-                    print("result 4");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Imposible");
-                }
+                //compare actual state with array of final states
+                self.compararArregloActual();
                 
             }
             else if(treceButton.titleLabel?.text != nil && catorceButton.currentTitle == nil){
@@ -1901,35 +852,8 @@ class ViewController: UIViewController {
                 //show movimientos on labelUI
                 self.setLabelMovimientos(movimientos: "\(movimientos)");
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
-                //compare final states
-                var tableroActual = [
-                                [unoButton.titleLabel!.text!, dosButton.titleLabel!.text!, tresButton.titleLabel!.text!, cuatroButton.titleLabel!.text!],
-                                   [cincoButton.titleLabel!.text!, seisButton.titleLabel!.text!, sieteButton.titleLabel!.text!, ochoButton.titleLabel!.text!],
-                                    [nueveButton.titleLabel!.text!, diezButton.titleLabel!.text!, onceButton.titleLabel!.text!, doceButton.titleLabel!.text!],
-                                    [treceButton.titleLabel!.text!, catorceButton.titleLabel!.text!, quinceButton.titleLabel!.text!,
-                                     diesciseisButton.titleLabel!.text!]];
-                self.takenObject?.setTableroActual(tablero: tableroActual);
-                var resultsComparation = self.takenObject?.verificarTablero();
-                if(resultsComparation?.0 == true && resultsComparation?.1 == 0){
-                    print("result 1");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Vertical");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 1){
-                    print("result 2");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Periferico");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 2){
-                    print("result 3");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Espiral");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 3){
-                    print("result 4");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Imposible");
-                }
+                //compare actual state with array of final states
+                self.compararArregloActual();
             }
         case self.catorceButton:
             if(catorceButton.titleLabel?.text != nil && treceButton.currentTitle == nil){
@@ -1944,35 +868,8 @@ class ViewController: UIViewController {
                 //show movimientos on labelUI
                 self.setLabelMovimientos(movimientos: "\(movimientos)");
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
-                //compare final states
-                var tableroActual = [
-                                [unoButton.titleLabel!.text!, dosButton.titleLabel!.text!, tresButton.titleLabel!.text!, cuatroButton.titleLabel!.text!],
-                                   [cincoButton.titleLabel!.text!, seisButton.titleLabel!.text!, sieteButton.titleLabel!.text!, ochoButton.titleLabel!.text!],
-                                    [nueveButton.titleLabel!.text!, diezButton.titleLabel!.text!, onceButton.titleLabel!.text!, doceButton.titleLabel!.text!],
-                                    [treceButton.titleLabel!.text!, catorceButton.titleLabel!.text!, quinceButton.titleLabel!.text!,
-                                     diesciseisButton.titleLabel!.text!]];
-                self.takenObject?.setTableroActual(tablero: tableroActual);
-                var resultsComparation = self.takenObject?.verificarTablero();
-                if(resultsComparation?.0 == true && resultsComparation?.1 == 0){
-                    print("result 1");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Vertical");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 1){
-                    print("result 2");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Periferico");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 2){
-                    print("result 3");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Espiral");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 3){
-                    print("result 4");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Imposible");
-                }
+                //compare actual state with array of final states
+                self.compararArregloActual();
             }
             else if(catorceButton.titleLabel?.text != nil && diezButton.currentTitle == nil){
                 tempButton = catorceButton;
@@ -1986,35 +883,8 @@ class ViewController: UIViewController {
                 //show movimientos on labelUI
                 self.setLabelMovimientos(movimientos: "\(movimientos)");
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
-                //compare final states
-                var tableroActual = [
-                                [unoButton.titleLabel!.text!, dosButton.titleLabel!.text!, tresButton.titleLabel!.text!, cuatroButton.titleLabel!.text!],
-                                   [cincoButton.titleLabel!.text!, seisButton.titleLabel!.text!, sieteButton.titleLabel!.text!, ochoButton.titleLabel!.text!],
-                                    [nueveButton.titleLabel!.text!, diezButton.titleLabel!.text!, onceButton.titleLabel!.text!, doceButton.titleLabel!.text!],
-                                    [treceButton.titleLabel!.text!, catorceButton.titleLabel!.text!, quinceButton.titleLabel!.text!,
-                                     diesciseisButton.titleLabel!.text!]];
-                self.takenObject?.setTableroActual(tablero: tableroActual);
-                var resultsComparation = self.takenObject?.verificarTablero();
-                if(resultsComparation?.0 == true && resultsComparation?.1 == 0){
-                    print("result 1");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Vertical");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 1){
-                    print("result 2");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Periferico");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 2){
-                    print("result 3");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Espiral");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 3){
-                    print("result 4");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Imposible");
-                }
+                //compare actual state with array of final states
+                self.compararArregloActual();
             }
             else if(catorceButton.titleLabel?.text != nil && quinceButton.currentTitle == nil){
                 tempButton = catorceButton;
@@ -2028,35 +898,8 @@ class ViewController: UIViewController {
                 //show movimientos on labelUI
                 self.setLabelMovimientos(movimientos: "\(movimientos)");
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
-                //compare final states
-                var tableroActual = [
-                                [unoButton.titleLabel!.text!, dosButton.titleLabel!.text!, tresButton.titleLabel!.text!, cuatroButton.titleLabel!.text!],
-                                   [cincoButton.titleLabel!.text!, seisButton.titleLabel!.text!, sieteButton.titleLabel!.text!, ochoButton.titleLabel!.text!],
-                                    [nueveButton.titleLabel!.text!, diezButton.titleLabel!.text!, onceButton.titleLabel!.text!, doceButton.titleLabel!.text!],
-                                    [treceButton.titleLabel!.text!, catorceButton.titleLabel!.text!, quinceButton.titleLabel!.text!,
-                                     diesciseisButton.titleLabel!.text!]];
-                self.takenObject?.setTableroActual(tablero: tableroActual);
-                var resultsComparation = self.takenObject?.verificarTablero();
-                if(resultsComparation?.0 == true && resultsComparation?.1 == 0){
-                    print("result 1");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Vertical");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 1){
-                    print("result 2");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Periferico");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 2){
-                    print("result 3");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Espiral");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 3){
-                    print("result 4");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Imposible");
-                }
+                //compare actual state with array of final states
+                self.compararArregloActual();
             }
         case self.quinceButton:
             if(quinceButton.titleLabel?.text != nil && catorceButton.currentTitle == nil){
@@ -2071,35 +914,8 @@ class ViewController: UIViewController {
                 //show movimientos on labelUI
                 self.setLabelMovimientos(movimientos: "\(movimientos)");
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
-                //compare final states
-                var tableroActual = [
-                                [unoButton.titleLabel!.text!, dosButton.titleLabel!.text!, tresButton.titleLabel!.text!, cuatroButton.titleLabel!.text!],
-                                   [cincoButton.titleLabel!.text!, seisButton.titleLabel!.text!, sieteButton.titleLabel!.text!, ochoButton.titleLabel!.text!],
-                                    [nueveButton.titleLabel!.text!, diezButton.titleLabel!.text!, onceButton.titleLabel!.text!, doceButton.titleLabel!.text!],
-                                    [treceButton.titleLabel!.text!, catorceButton.titleLabel!.text!, quinceButton.titleLabel!.text!,
-                                     diesciseisButton.titleLabel!.text!]];
-                self.takenObject?.setTableroActual(tablero: tableroActual);
-                var resultsComparation = self.takenObject?.verificarTablero();
-                if(resultsComparation?.0 == true && resultsComparation?.1 == 0){
-                    print("result 1");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Vertical");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 1){
-                    print("result 2");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Periferico");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 2){
-                    print("result 3");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Espiral");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 3){
-                    print("result 4");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Imposible");
-                }
+                //compare actual state with array of final states
+                self.compararArregloActual();
             }
             else if(quinceButton.titleLabel?.text != nil && onceButton.currentTitle == nil){
                 tempButton = quinceButton;
@@ -2113,35 +929,8 @@ class ViewController: UIViewController {
                 //show movimientos on labelUI
                 self.setLabelMovimientos(movimientos: "\(movimientos)");
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
-                //compare final states
-                var tableroActual = [
-                                [unoButton.titleLabel!.text!, dosButton.titleLabel!.text!, tresButton.titleLabel!.text!, cuatroButton.titleLabel!.text!],
-                                   [cincoButton.titleLabel!.text!, seisButton.titleLabel!.text!, sieteButton.titleLabel!.text!, ochoButton.titleLabel!.text!],
-                                    [nueveButton.titleLabel!.text!, diezButton.titleLabel!.text!, onceButton.titleLabel!.text!, doceButton.titleLabel!.text!],
-                                    [treceButton.titleLabel!.text!, catorceButton.titleLabel!.text!, quinceButton.titleLabel!.text!,
-                                     diesciseisButton.titleLabel!.text!]];
-                self.takenObject?.setTableroActual(tablero: tableroActual);
-                var resultsComparation = self.takenObject?.verificarTablero();
-                if(resultsComparation?.0 == true && resultsComparation?.1 == 0){
-                    print("result 1");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Vertical");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 1){
-                    print("result 2");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Periferico");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 2){
-                    print("result 3");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Espiral");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 3){
-                    print("result 4");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Imposible");
-                }
+                //compare actual state with array of final states
+                self.compararArregloActual();
             }
             else if(quinceButton.titleLabel?.text != nil && diesciseisButton.currentTitle == nil){
                 tempButton = quinceButton;
@@ -2155,35 +944,8 @@ class ViewController: UIViewController {
                 //show movimientos on labelUI
                 self.setLabelMovimientos(movimientos: "\(movimientos)");
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
-                //compare final states
-                var tableroActual = [
-                                [unoButton.titleLabel!.text!, dosButton.titleLabel!.text!, tresButton.titleLabel!.text!, cuatroButton.titleLabel!.text!],
-                                   [cincoButton.titleLabel!.text!, seisButton.titleLabel!.text!, sieteButton.titleLabel!.text!, ochoButton.titleLabel!.text!],
-                                    [nueveButton.titleLabel!.text!, diezButton.titleLabel!.text!, onceButton.titleLabel!.text!, doceButton.titleLabel!.text!],
-                                    [treceButton.titleLabel!.text!, catorceButton.titleLabel!.text!, quinceButton.titleLabel!.text!,
-                                     diesciseisButton.titleLabel!.text!]];
-                self.takenObject?.setTableroActual(tablero: tableroActual);
-                var resultsComparation = self.takenObject?.verificarTablero();
-                if(resultsComparation?.0 == true && resultsComparation?.1 == 0){
-                    print("result 1");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Vertical");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 1){
-                    print("result 2");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Periferico");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 2){
-                    print("result 3");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Espiral");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 3){
-                    print("result 4");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Imposible");
-                }
+                //compare actual state with array of final states
+                self.compararArregloActual();
             }
         case self.diesciseisButton:
             if(diesciseisButton.titleLabel?.text != nil && quinceButton.currentTitle == nil){
@@ -2198,35 +960,8 @@ class ViewController: UIViewController {
                 //show movimientos on labelUI
                 self.setLabelMovimientos(movimientos: "\(movimientos)");
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
-                //compare final states
-                var tableroActual = [
-                                [unoButton.titleLabel!.text!, dosButton.titleLabel!.text!, tresButton.titleLabel!.text!, cuatroButton.titleLabel!.text!],
-                                   [cincoButton.titleLabel!.text!, seisButton.titleLabel!.text!, sieteButton.titleLabel!.text!, ochoButton.titleLabel!.text!],
-                                    [nueveButton.titleLabel!.text!, diezButton.titleLabel!.text!, onceButton.titleLabel!.text!, doceButton.titleLabel!.text!],
-                                    [treceButton.titleLabel!.text!, catorceButton.titleLabel!.text!, quinceButton.titleLabel!.text!,
-                                     diesciseisButton.titleLabel!.text!]];
-                self.takenObject?.setTableroActual(tablero: tableroActual);
-                var resultsComparation = self.takenObject?.verificarTablero();
-                if(resultsComparation?.0 == true && resultsComparation?.1 == 0){
-                    print("result 1");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Vertical");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 1){
-                    print("result 2");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Periferico");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 2){
-                    print("result 3");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Espiral");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 3){
-                    print("result 4");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Imposible");
-                }
+                //compare actual state with array of final states
+                self.compararArregloActual();
             }
             else if(diesciseisButton.titleLabel?.text != nil && doceButton.currentTitle == nil){
                 tempButton = diesciseisButton;
@@ -2240,35 +975,8 @@ class ViewController: UIViewController {
                 //show movimientos on labelUI
                 self.setLabelMovimientos(movimientos: "\(movimientos)");
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
-                //compare final states
-                var tableroActual = [
-                                [unoButton.titleLabel!.text!, dosButton.titleLabel!.text!, tresButton.titleLabel!.text!, cuatroButton.titleLabel!.text!],
-                                   [cincoButton.titleLabel!.text!, seisButton.titleLabel!.text!, sieteButton.titleLabel!.text!, ochoButton.titleLabel!.text!],
-                                    [nueveButton.titleLabel!.text!, diezButton.titleLabel!.text!, onceButton.titleLabel!.text!, doceButton.titleLabel!.text!],
-                                    [treceButton.titleLabel!.text!, catorceButton.titleLabel!.text!, quinceButton.titleLabel!.text!,
-                                     diesciseisButton.titleLabel!.text!]];
-                self.takenObject?.setTableroActual(tablero: tableroActual);
-                var resultsComparation = self.takenObject?.verificarTablero();
-                if(resultsComparation?.0 == true && resultsComparation?.1 == 0){
-                    print("result 1");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Vertical");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 1){
-                    print("result 2");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Periferico");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 2){
-                    print("result 3");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Espiral");
-                }
-                else if(resultsComparation?.0 == true && resultsComparation?.1 == 3){
-                    print("result 4");
-                    self.desactivaTablero();
-                    self.alerta(resultado: "Imposible");
-                }
+                //compare actual state with array of final states
+                self.compararArregloActual();
             }
         default:
             break;
