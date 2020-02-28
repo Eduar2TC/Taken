@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  Taken
 //
-//  Created by Moviles on 21/01/20.
+//  Created by EduardoTC on 21/01/20.
 //  Copyright © 2020 Eduardo. All rights reserved.
 //
 
@@ -62,6 +62,8 @@ class ViewController: UIViewController {
         self.labelMovimientos.text! = movimientos;
     }
     @IBAction func reiniciarTablero(_ sender: Any) {
+        //movimientos
+        self.takenObject?.setMovimientos(movimientos: 0);
         //1, 2, 3, 4
         self.unoButton.setTitle("1", for: .normal);
         self.unoButton.backgroundColor = UIColor.systemTeal;
