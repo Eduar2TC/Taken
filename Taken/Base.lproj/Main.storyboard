@@ -15,11 +15,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Movimientos" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jvk-0Q-9WO">
-                                <rect key="frame" x="20" y="633" width="374" height="24"/>
-                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="20"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fXB-Fm-eex">
                                 <rect key="frame" x="50" y="69" width="315" height="55.5"/>
                                 <color key="backgroundColor" red="0.95987552404403687" green="0.92591840028762817" blue="0.069639965891838074" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -34,44 +29,6 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mjH-dT-pRG">
-                                <rect key="frame" x="90" y="673" width="235" height="43"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="43" id="SWz-n2-z6r"/>
-                                    <constraint firstAttribute="width" constant="80" id="Ywm-iz-uKK"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="20"/>
-                                <color key="textColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xua-vS-LQd">
-                                <rect key="frame" x="178" y="760" width="59" height="30"/>
-                                <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="120" id="UPT-11-YFB"/>
-                                    <constraint firstAttribute="height" constant="40" id="ydg-V8-AWr"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
-                                <state key="normal" title="Reiniciar">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="reiniciarTablero:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XRK-hH-eSY"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i3O-sO-wbG">
                                 <rect key="frame" x="51" y="157" width="299" height="316"/>
                                 <subviews>
@@ -424,22 +381,77 @@
                                     <constraint firstItem="rgH-33-Bc3" firstAttribute="height" secondItem="1P9-nD-nA7" secondAttribute="height" id="z7P-ce-eVt"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uof-qU-Kg8">
+                                <rect key="frame" x="141" y="738" width="146" height="112"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xua-vS-LQd">
+                                        <rect key="frame" x="13" y="73" width="120" height="31"/>
+                                        <color key="backgroundColor" red="0.056342893479013667" green="0.056195371797353427" blue="0.058772208121827374" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="120" id="UPT-11-YFB"/>
+                                            <constraint firstAttribute="height" constant="40" id="lks-wb-b29"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
+                                        <state key="normal" title="Reiniciar">
+                                            <color key="titleColor" red="0.50974809553105249" green="0.7294090741628062" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="reiniciarTablero:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XRK-hH-eSY"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Movimientos" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jvk-0Q-9WO">
+                                        <rect key="frame" x="13" y="0.0" width="120" height="24"/>
+                                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="20"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mjH-dT-pRG">
+                                        <rect key="frame" x="13" y="32" width="120" height="33"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="120" id="8fU-vh-Si6"/>
+                                            <constraint firstAttribute="height" constant="30" id="SWz-n2-z6r"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="20"/>
+                                        <color key="textColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="mjH-dT-pRG" firstAttribute="top" secondItem="jvk-0Q-9WO" secondAttribute="bottom" constant="5" id="6Oj-cQ-gR3"/>
+                                    <constraint firstItem="xua-vS-LQd" firstAttribute="leading" secondItem="uof-qU-Kg8" secondAttribute="leading" constant="60" id="9TN-JU-I63"/>
+                                    <constraint firstAttribute="trailing" secondItem="mjH-dT-pRG" secondAttribute="trailing" constant="60" id="AlT-X4-Wbq"/>
+                                    <constraint firstAttribute="trailing" secondItem="jvk-0Q-9WO" secondAttribute="trailing" constant="12" id="D3m-zd-kMO"/>
+                                    <constraint firstItem="mjH-dT-pRG" firstAttribute="leading" secondItem="uof-qU-Kg8" secondAttribute="leading" constant="60" id="DT8-gY-xrJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="xua-vS-LQd" secondAttribute="bottom" id="gIq-Qa-V0I"/>
+                                    <constraint firstItem="jvk-0Q-9WO" firstAttribute="leading" secondItem="uof-qU-Kg8" secondAttribute="leading" constant="13" id="kqD-xt-fwR"/>
+                                    <constraint firstAttribute="trailing" secondItem="xua-vS-LQd" secondAttribute="trailing" constant="60" id="nrD-kY-IYh"/>
+                                    <constraint firstItem="xua-vS-LQd" firstAttribute="top" secondItem="mjH-dT-pRG" secondAttribute="bottom" constant="5" id="zCg-UQ-GB9"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.94035643339157104" green="0.92224889993667603" blue="0.73088198900222778" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="i3O-sO-wbG" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="BLL-kz-WEY"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="xua-vS-LQd" secondAttribute="bottom" constant="5" id="FJn-aC-m4A"/>
-                            <constraint firstItem="jvk-0Q-9WO" firstAttribute="top" secondItem="i3O-sO-wbG" secondAttribute="bottom" constant="5" id="FN8-MN-msw"/>
-                            <constraint firstItem="xua-vS-LQd" firstAttribute="top" secondItem="mjH-dT-pRG" secondAttribute="bottom" constant="5" id="Jlz-hE-slJ"/>
-                            <constraint firstItem="mjH-dT-pRG" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Rb6-MY-OkN"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jvk-0Q-9WO" secondAttribute="trailing" constant="20" id="bJH-EP-Xiz"/>
+                            <constraint firstItem="uof-qU-Kg8" firstAttribute="top" secondItem="i3O-sO-wbG" secondAttribute="bottom" constant="110" id="FRJ-dC-Clt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="uof-qU-Kg8" secondAttribute="bottom" constant="5" id="LU1-tf-o64"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fXB-Fm-eex" secondAttribute="trailing" constant="20" id="e3D-fU-1Pq"/>
-                            <constraint firstItem="mjH-dT-pRG" firstAttribute="top" secondItem="jvk-0Q-9WO" secondAttribute="bottom" constant="2" id="hm3-De-LLU"/>
-                            <constraint firstItem="jvk-0Q-9WO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="jMd-0U-5zo"/>
                             <constraint firstItem="i3O-sO-wbG" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="pD5-HL-7Fd"/>
                             <constraint firstItem="fXB-Fm-eex" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="rbv-De-hHz"/>
                             <constraint firstItem="fXB-Fm-eex" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="xU0-WY-P1s"/>
-                            <constraint firstItem="xua-vS-LQd" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="zee-hj-fdQ"/>
+                            <constraint firstItem="uof-qU-Kg8" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="yI6-Jb-hor"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
