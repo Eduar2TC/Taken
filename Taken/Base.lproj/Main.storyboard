@@ -39,7 +39,7 @@
                                             <constraint firstAttribute="height" constant="70" id="EHp-Hn-xtj"/>
                                             <constraint firstAttribute="width" constant="70" id="qC0-RN-9lv"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="15">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
@@ -244,7 +244,7 @@
                                         <rect key="frame" x="222" y="223" width="69" height="70"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal">
+                                        <state key="normal" title="4">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -261,7 +261,7 @@
                                         <rect key="frame" x="222" y="149" width="69" height="70"/>
                                         <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="4">
+                                        <state key="normal">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -277,7 +277,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wib-wc-hm6">
                                         <rect key="frame" x="149" y="222" width="70" height="74"/>
                                         <color key="backgroundColor" red="1" green="0.98478173503581967" blue="0.7308334708822839" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                         <state key="normal" title="1">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
@@ -380,6 +380,12 @@
                                     <constraint firstAttribute="bottom" secondItem="1uz-Rb-v84" secondAttribute="bottom" constant="3" id="xp3-CS-xnT"/>
                                     <constraint firstItem="rgH-33-Bc3" firstAttribute="height" secondItem="1P9-nD-nA7" secondAttribute="height" id="z7P-ce-eVt"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uof-qU-Kg8">
                                 <rect key="frame" x="141" y="738" width="146" height="112"/>

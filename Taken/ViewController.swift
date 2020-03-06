@@ -63,8 +63,8 @@ class ViewController: UIViewController {
         //show movimientos on labelUI
         self.labelMovimientos.text! = movimientos;
     }
-    func sonidoMovimiento(){
-        let sound = Bundle.main.path(forResource: "click", ofType: "mp3"); //file mp3
+    func soundEffect(tipo: String){ //tipo de sonido
+        let sound = Bundle.main.path(forResource: tipo, ofType: "mp3"); //file mp3
         do{
             audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: sound!));
             audioPlayer.play();
@@ -205,12 +205,13 @@ class ViewController: UIViewController {
         self.present(alert, animated: true)
     }
     func compararArregloActual(){
+        //send text in mode currentTitle
         var tableroActual = [
-                        [unoButton.titleLabel!.text!, dosButton.titleLabel!.text!, tresButton.titleLabel!.text!, cuatroButton.titleLabel!.text!],
-                           [cincoButton.titleLabel!.text!, seisButton.titleLabel!.text!, sieteButton.titleLabel!.text!, ochoButton.titleLabel!.text!],
-                            [nueveButton.titleLabel!.text!, diezButton.titleLabel!.text!, onceButton.titleLabel!.text!, doceButton.titleLabel!.text!],
-                            [treceButton.titleLabel!.text!, catorceButton.titleLabel!.text!, quinceButton.titleLabel!.text!,
-                             diesciseisButton.titleLabel!.text!]];
+            [unoButton.currentTitle, dosButton.currentTitle, tresButton.currentTitle, cuatroButton.currentTitle],
+            [cincoButton.currentTitle, seisButton.currentTitle, sieteButton.currentTitle, ochoButton.currentTitle],
+            [nueveButton.currentTitle, diezButton.currentTitle, onceButton.currentTitle, doceButton.currentTitle],
+            [treceButton.currentTitle, catorceButton.currentTitle, quinceButton.currentTitle,
+             diesciseisButton.currentTitle]];
         self.takenObject?.setTableroActual(tablero: tableroActual);
         var resultsComparation = self.takenObject?.verificarTablero();
         if(resultsComparation?.0 == true && resultsComparation?.1 == 0){
@@ -232,6 +233,10 @@ class ViewController: UIViewController {
             print("result 4");
             self.desactivaTablero();
             self.alerta(resultado: "Imposible");
+            self.soundEffect(tipo: "ta-da");
+        }
+        else if(resultsComparation?.0 == false && resultsComparation?.1 == 0){
+            self.soundEffect(tipo: "click")
         }
     }
     @IBAction func moverCasilla(_ sender: UIButton) {
@@ -257,7 +262,6 @@ class ViewController: UIViewController {
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
                 //compare actual state with array of final states
                 self.compararArregloActual();
-                self.sonidoMovimiento(); //sonido mov
             }
             else if(unoButton.titleLabel?.text != nil && cincoButton.currentTitle == nil){
                 tempButton = unoButton;
@@ -273,7 +277,6 @@ class ViewController: UIViewController {
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
                 //compare actual state with array of final states
                 self.compararArregloActual();
-                self.sonidoMovimiento(); //sonido mov
                 
             }
         case self.dosButton:
@@ -291,7 +294,6 @@ class ViewController: UIViewController {
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
                 //compare actual state with array of final states
                 self.compararArregloActual();
-                self.sonidoMovimiento(); //sonido mov
             }
             else if(dosButton.titleLabel?.text != nil && seisButton.currentTitle == nil){
                 tempButton = dosButton;
@@ -307,7 +309,6 @@ class ViewController: UIViewController {
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
                 //compare actual state with array of final states
                 self.compararArregloActual();
-                self.sonidoMovimiento(); //sonido mov
             }
             else if(dosButton.titleLabel?.text != nil && tresButton.currentTitle == nil){
                 tempButton = dosButton;
@@ -323,7 +324,6 @@ class ViewController: UIViewController {
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
                 //compare actual state with array of final states
                 self.compararArregloActual();
-                self.sonidoMovimiento(); //sonido mov
             }
         case self.tresButton:
             if(tresButton.titleLabel?.text != nil && dosButton.currentTitle == nil){
@@ -340,7 +340,6 @@ class ViewController: UIViewController {
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
                 //compare actual state with array of final states
                 self.compararArregloActual();
-                self.sonidoMovimiento(); //sonido mov
             }
             else if(tresButton.titleLabel?.text != nil && cuatroButton.currentTitle == nil){
                 tempButton = tresButton;
@@ -356,7 +355,6 @@ class ViewController: UIViewController {
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
                 //compare actual state with array of final states
                 self.compararArregloActual();
-                self.sonidoMovimiento(); //sonido mov
             }
             else if(tresButton.titleLabel?.text != nil && sieteButton.currentTitle == nil){
                 tempButton = tresButton;
@@ -372,7 +370,6 @@ class ViewController: UIViewController {
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
                 //compare actual state with array of final states
                 self.compararArregloActual();
-                self.sonidoMovimiento(); //sonido mov
                 
             }
         case self.cuatroButton:
@@ -390,7 +387,6 @@ class ViewController: UIViewController {
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
                 //compare actual state with array of final states
                 self.compararArregloActual();
-                self.sonidoMovimiento(); //sonido mov
             }
             else if(cuatroButton.titleLabel?.text != nil && ochoButton.currentTitle == nil){
                 tempButton = cuatroButton;
@@ -406,7 +402,6 @@ class ViewController: UIViewController {
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
                 //compare actual state with array of final states
                 self.compararArregloActual();
-                self.sonidoMovimiento(); //sonido mov
             }
             //5, 6, 7, 8
         case self.cincoButton:
@@ -424,7 +419,6 @@ class ViewController: UIViewController {
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
                 //compare actual state with array of final states
                 self.compararArregloActual();
-                self.sonidoMovimiento(); //sonido mov
             }
             else if(cincoButton.titleLabel?.text != nil && seisButton.currentTitle == nil){
                 tempButton = cincoButton;
@@ -440,7 +434,6 @@ class ViewController: UIViewController {
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
                 //compare actual state with array of final states
                 self.compararArregloActual();
-                self.sonidoMovimiento(); //sonido mov
             }
             else if(cincoButton.titleLabel?.text != nil && nueveButton.currentTitle == nil){
                 tempButton = cincoButton;
@@ -456,7 +449,6 @@ class ViewController: UIViewController {
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
                 //compare actual state with array of final states
                 self.compararArregloActual();
-                self.sonidoMovimiento(); //sonido mov
             }
             
         case self.seisButton:
@@ -474,7 +466,6 @@ class ViewController: UIViewController {
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
                 //compare actual state with array of final states
                 self.compararArregloActual();
-                self.sonidoMovimiento(); //sonido mov
             }
             else if(seisButton.titleLabel?.text != nil && dosButton.currentTitle == nil){
                 tempButton = seisButton;
@@ -490,7 +481,6 @@ class ViewController: UIViewController {
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
                 //compare actual state with array of final states
                 self.compararArregloActual();
-                self.sonidoMovimiento(); //sonido mov
             }
             else if(seisButton.titleLabel?.text != nil && sieteButton.currentTitle == nil){
                 tempButton = seisButton;
@@ -506,7 +496,6 @@ class ViewController: UIViewController {
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
                 //compare actual state with array of final states
                 self.compararArregloActual();
-                self.sonidoMovimiento(); //sonido mov
             }
             else if(seisButton.titleLabel?.text != nil && diezButton.currentTitle == nil){
                 tempButton = seisButton;
@@ -522,7 +511,6 @@ class ViewController: UIViewController {
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
                 //compare actual state with array of final states
                 self.compararArregloActual();
-                self.sonidoMovimiento(); //sonido mov
             }
         case self.sieteButton:
             if(sieteButton.titleLabel?.text != nil && seisButton.currentTitle == nil){
@@ -539,7 +527,6 @@ class ViewController: UIViewController {
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
                 //compare actual state with array of final states
                 self.compararArregloActual();
-                self.sonidoMovimiento(); //sonido mov
             }
             else if(sieteButton.titleLabel?.text != nil && tresButton.currentTitle == nil){
                 tempButton = sieteButton;
@@ -555,7 +542,6 @@ class ViewController: UIViewController {
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
                 //compare actual state with array of final states
                 self.compararArregloActual();
-                self.sonidoMovimiento(); //sonido mov
             }
             else if(sieteButton.titleLabel?.text != nil && ochoButton.currentTitle == nil){
                 tempButton = sieteButton;
@@ -571,7 +557,6 @@ class ViewController: UIViewController {
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
                 //compare actual state with array of final states
                 self.compararArregloActual();
-                self.sonidoMovimiento(); //sonido mov
             }
             else if(sieteButton.titleLabel?.text != nil && onceButton.currentTitle == nil){
                 tempButton = sieteButton;
@@ -587,7 +572,6 @@ class ViewController: UIViewController {
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
                 //compare actual state with array of final states
                 self.compararArregloActual();
-                self.sonidoMovimiento(); //sonido mov
             }
             case self.ochoButton:
             if(ochoButton.titleLabel?.text != nil && sieteButton.currentTitle == nil){
@@ -604,7 +588,6 @@ class ViewController: UIViewController {
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
                 //compare actual state with array of final states
                 self.compararArregloActual();
-                self.sonidoMovimiento(); //sonido mov
             }
             if(ochoButton.titleLabel?.text != nil && cuatroButton.currentTitle == nil){
                 tempButton = ochoButton;
@@ -620,7 +603,6 @@ class ViewController: UIViewController {
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
                 //compare actual state with array of final states
                 self.compararArregloActual();
-                self.sonidoMovimiento(); //sonido mov
             }
             if(ochoButton.titleLabel?.text != nil && doceButton.currentTitle == nil){
                 tempButton = ochoButton;
@@ -636,7 +618,6 @@ class ViewController: UIViewController {
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
                 //compare actual state with array of final states
                 self.compararArregloActual();
-                self.sonidoMovimiento(); //sonido mov
             }
             //9, 10, 11, 12
         case self.nueveButton:
@@ -654,7 +635,6 @@ class ViewController: UIViewController {
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
                 //compare actual state with array of final states
                 self.compararArregloActual();
-                self.sonidoMovimiento(); //sonido mov
             }
             if(nueveButton.titleLabel?.text != nil && diezButton.currentTitle == nil){
                 tempButton = nueveButton;
@@ -670,7 +650,6 @@ class ViewController: UIViewController {
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
                 //compare actual state with array of final states
                 self.compararArregloActual();
-                self.sonidoMovimiento(); //sonido mov
             }
             if(nueveButton.titleLabel?.text != nil && treceButton.currentTitle == nil){
                 tempButton = nueveButton;
@@ -686,7 +665,6 @@ class ViewController: UIViewController {
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
                 //compare actual state with array of final states
                 self.compararArregloActual();
-                self.sonidoMovimiento(); //sonido mov
             }
         case self.diezButton:
             if(diezButton.titleLabel?.text != nil && nueveButton.currentTitle == nil){
@@ -703,7 +681,6 @@ class ViewController: UIViewController {
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
                 //compare actual state with array of final states
                 self.compararArregloActual();
-                self.sonidoMovimiento(); //sonido mov
             }
             if(diezButton.titleLabel?.text != nil && seisButton.currentTitle == nil){
                 tempButton = diezButton;
@@ -719,7 +696,6 @@ class ViewController: UIViewController {
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
                 //compare actual state with array of final states
                 self.compararArregloActual();
-                self.sonidoMovimiento(); //sonido mov
             }
             if(diezButton.titleLabel?.text != nil && onceButton.currentTitle == nil){
                 tempButton = diezButton;
@@ -735,7 +711,6 @@ class ViewController: UIViewController {
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
                 //compare actual state with array of final states
                 self.compararArregloActual();
-                self.sonidoMovimiento(); //sonido mov
 //
             }
             if(diezButton.titleLabel?.text != nil && catorceButton.currentTitle == nil){
@@ -752,7 +727,6 @@ class ViewController: UIViewController {
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
                 //compare actual state with array of final states
                 self.compararArregloActual();
-                self.sonidoMovimiento(); //sonido mov
             }
             case self.onceButton:
             if(onceButton.titleLabel?.text != nil && diezButton.currentTitle == nil){
@@ -769,7 +743,6 @@ class ViewController: UIViewController {
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
                 //compare actual state with array of final states
                 self.compararArregloActual();
-                self.sonidoMovimiento(); //sonido mov
             }
             else if(onceButton.titleLabel?.text != nil && sieteButton.currentTitle == nil){
                 tempButton = onceButton;
@@ -785,7 +758,6 @@ class ViewController: UIViewController {
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
                 //compare actual state with array of final states
                 self.compararArregloActual();
-                self.sonidoMovimiento(); //sonido mov
             }
             else if(onceButton.titleLabel?.text != nil && doceButton.currentTitle == nil){
                 tempButton = onceButton;
@@ -801,7 +773,6 @@ class ViewController: UIViewController {
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
                 //compare actual state with array of final states
                 self.compararArregloActual();
-                self.sonidoMovimiento(); //sonido mov
             }
             else if(onceButton.titleLabel?.text != nil && doceButton.currentTitle == nil){
                 tempButton = onceButton;
@@ -817,7 +788,6 @@ class ViewController: UIViewController {
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
                 //compare actual state with array of final states
                 self.compararArregloActual();
-                self.sonidoMovimiento(); //sonido mov
             }
             else if(onceButton.titleLabel?.text != nil && quinceButton.currentTitle == nil){
                 tempButton = onceButton;
@@ -833,7 +803,6 @@ class ViewController: UIViewController {
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
                 //compare actual state with array of final states
                 self.compararArregloActual();
-                self.sonidoMovimiento(); //sonido mov
             }
         case self.doceButton:
             if(doceButton.titleLabel?.text != nil && onceButton.currentTitle == nil){
@@ -850,7 +819,6 @@ class ViewController: UIViewController {
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
                 //compare actual state with array of final states
                 self.compararArregloActual();
-                self.sonidoMovimiento(); //sonido mov
              }
             else if(doceButton.titleLabel?.text != nil && ochoButton.currentTitle == nil){
                 tempButton = doceButton;
@@ -866,7 +834,6 @@ class ViewController: UIViewController {
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
                 //compare actual state with array of final states
                 self.compararArregloActual();
-                self.sonidoMovimiento(); //sonido mov
             }
             else if(doceButton.titleLabel?.text != nil && diesciseisButton.currentTitle == nil){
                 tempButton = doceButton;
@@ -882,7 +849,6 @@ class ViewController: UIViewController {
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
                 //compare actual state with array of final states
                 self.compararArregloActual();
-                self.sonidoMovimiento(); //sonido mov
             }
             //13, 14, 15, 16
         case self.treceButton:
@@ -900,7 +866,6 @@ class ViewController: UIViewController {
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
                 //compare actual state with array of final states
                 self.compararArregloActual();
-                self.sonidoMovimiento(); //sonido mov
                 
             }
             else if(treceButton.titleLabel?.text != nil && catorceButton.currentTitle == nil){
@@ -917,7 +882,6 @@ class ViewController: UIViewController {
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
                 //compare actual state with array of final states
                 self.compararArregloActual();
-                self.sonidoMovimiento(); //sonido mov
             }
         case self.catorceButton:
             if(catorceButton.titleLabel?.text != nil && treceButton.currentTitle == nil){
@@ -934,7 +898,6 @@ class ViewController: UIViewController {
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
                 //compare actual state with array of final states
                 self.compararArregloActual();
-                self.sonidoMovimiento(); //sonido mov
             }
             else if(catorceButton.titleLabel?.text != nil && diezButton.currentTitle == nil){
                 tempButton = catorceButton;
@@ -950,7 +913,6 @@ class ViewController: UIViewController {
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
                 //compare actual state with array of final states
                 self.compararArregloActual();
-                self.sonidoMovimiento(); //sonido mov
             }
             else if(catorceButton.titleLabel?.text != nil && quinceButton.currentTitle == nil){
                 tempButton = catorceButton;
@@ -966,7 +928,6 @@ class ViewController: UIViewController {
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
                 //compare actual state with array of final states
                 self.compararArregloActual();
-                self.sonidoMovimiento(); //sonido mov
             }
         case self.quinceButton:
             if(quinceButton.titleLabel?.text != nil && catorceButton.currentTitle == nil){
@@ -983,7 +944,6 @@ class ViewController: UIViewController {
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
                 //compare actual state with array of final states
                 self.compararArregloActual();
-                self.sonidoMovimiento(); //sonido mov
             }
             else if(quinceButton.titleLabel?.text != nil && onceButton.currentTitle == nil){
                 tempButton = quinceButton;
@@ -999,7 +959,6 @@ class ViewController: UIViewController {
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
                 //compare actual state with array of final states
                 self.compararArregloActual();
-                self.sonidoMovimiento(); //sonido mov
             }
             else if(quinceButton.titleLabel?.text != nil && diesciseisButton.currentTitle == nil){
                 tempButton = quinceButton;
@@ -1015,7 +974,6 @@ class ViewController: UIViewController {
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
                 //compare actual state with array of final states
                 self.compararArregloActual();
-                self.sonidoMovimiento(); //sonido mov
             }
         case self.diesciseisButton:
             if(diesciseisButton.titleLabel?.text != nil && quinceButton.currentTitle == nil){
@@ -1032,9 +990,8 @@ class ViewController: UIViewController {
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
                 //compare actual state with array of final states
                 self.compararArregloActual();
-                self.sonidoMovimiento(); //sonido mov
             }
-            else if(diesciseisButton.titleLabel?.text != nil && doceButton.currentTitle == nil){
+            else if(diesciseisButton.currentTitle != nil && doceButton.currentTitle == nil){
                 tempButton = diesciseisButton;
                 diesciseisButton.setTitle(nil, for: .normal);
                 doceButton.setTitle(tempButton.titleLabel!.text!, for: .normal);
@@ -1048,7 +1005,6 @@ class ViewController: UIViewController {
                 self.takenObject?.setMovimientos(movimientos: movimientos); //set values propities on object
                 //compare actual state with array of final states
                 self.compararArregloActual();
-                self.sonidoMovimiento(); //sonido mov
             }
         default:
             break;
